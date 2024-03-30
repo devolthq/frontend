@@ -47,12 +47,12 @@ export const AppBar: React.FC = () => {
             />
             <NavElement
               label="Buy Energy"
-              href="/basics"
+              href="/buy-power"
               navigationStarts={() => setIsNavOpen(false)}
             />
             <NavElement
               label="Sell Energy"
-              href="/basics"
+              href="/sell-power"
               navigationStarts={() => setIsNavOpen(false)}
             />
             <WalletMultiButtonDynamic className="btn-ghost btn-sm rounded-btn text-lg mr-6 " />
