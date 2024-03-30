@@ -46,7 +46,12 @@ export const AppBar: React.FC = () => {
               navigationStarts={() => setIsNavOpen(false)}
             />
             <NavElement
-              label="Basics"
+              label="Buy Energy"
+              href="/basics"
+              navigationStarts={() => setIsNavOpen(false)}
+            />
+            <NavElement
+              label="Sell Energy"
               href="/basics"
               navigationStarts={() => setIsNavOpen(false)}
             />

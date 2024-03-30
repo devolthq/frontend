@@ -22,6 +22,7 @@ module.exports = {
             body: ["Manrope, Inter, sans-serif"],
           },
           primary: "#3AFF4E" /* Primary color */,
+          gradient : "#29B337" /* Primary color */,
           "primary-focus": "#3AFF4E" /* decidir */,
           "primary-content":
             "#161616" /* Foreground content color to use on primary color */,
