@@ -8,6 +8,9 @@ import { Footer } from '../components/Footer';
 import Notifications from '../components/Notification'
 require('@solana/wallet-adapter-react-ui/styles.css');
 require('../styles/globals.css');
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -25,8 +28,11 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                 <Footer/>
               </ContentContainer>
             </div>
+            <ToastContainer/>
           </ContextProvider>
+
         </>
+
     );
 };
 

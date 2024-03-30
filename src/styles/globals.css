@@ -1,18 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-image: radial-gradient(
-    circle farthest-side at 50% 100%,rgba(1, 9, 18, 0),
-    rgba(1, 6, 14, 0.6) 36%,
-    rgba(1, 14, 29, 0.6) 55%,
-    rgba(49, 18, 93, 0.4));
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      #111111,  /* início do gradiente */
+      #161616 100% /* fim do gradiente */
+    );
+    
+  
 }
 
 a {
@@ -28,4 +31,77 @@ a {
 .wallet-adapter-button:not([disabled]):hover {
   background-color: #707070;
 }
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root,
+[data-theme] {
+  background: oklch(var(--b2));
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+h1 {
+  font-size: 2.5rem;
+  color: #161616;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.h1-white {
+  color: #ffffff;
+}
+
+.h1-white-big {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.2;
+
+}
+
+.h1-big {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+}
+
+
+
+h2 {
+  font-size: 2rem;
+  color: #161616;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #161616;
+  font-weight: 300;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+header {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+
+p {
+  margin: 1rem 0;
+}
+
+
+
 
