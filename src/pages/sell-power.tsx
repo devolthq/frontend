@@ -53,18 +53,18 @@ const SellPower: NextPage = () => {
     args: [selectedStation.id.toString(), address||"0x455E5AA18469bC6ccEF49594645666C587A3a71B", selectedAmount.toString(), selectedPrice.toString()]
   })
 
-  const { writeAsync, isLoading, isMining } = useScaffoldContractWrite({
-    contractName: "InputBox",
-    functionName: "addInput",
-    args: [
-      "0xa5cc3c03994DB5b0d9A5eEdD10CabaB0813678AC",
-      bytecode,
-    ], //id da estação, address do sender, batteryAmount, price)],
-    blockConfirmations: 1,
-    onBlockConfirmation: txnReceipt => {
-      console.log("Transaction blockHash", txnReceipt.blockHash);
-    },
-  });
+  // const { writeAsync, isLoading, isMining } = useScaffoldContractWrite({
+  //   contractName: "InputBox",
+  //   functionName: "addInput",
+  //   args: [
+  //     "0xa5cc3c03994DB5b0d9A5eEdD10CabaB0813678AC",
+  //     bytecode,
+  //   ], //id da estação, address do sender, batteryAmount, price)],
+  //   blockConfirmations: 1,
+  //   onBlockConfirmation: txnReceipt => {
+  //     console.log("Transaction blockHash", txnReceipt.blockHash);
+  //   },
+  // });
 
   useEffect(() => {
     if (selectedStation.id == 0) return;
@@ -105,7 +105,7 @@ const SellPower: NextPage = () => {
       amount: selectedAmount,
       user: address,
     });
-    writeAsync()
+    // writeAsync()
     
   };
 
@@ -114,7 +114,7 @@ const SellPower: NextPage = () => {
       <LocationProvider>
         <GetUserGeolocationDialog />
         <div className="flex flex-col mx-8 my-2">
-          <h1 className="text-neutral text-5xl mb-4">Sell your power</h1>
+          <h1 className="text-neutral text-5xl mb-4 ">Sell your power</h1>
 
           <SellFirstStep
             selectedStation={selectedStation}

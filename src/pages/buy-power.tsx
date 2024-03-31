@@ -132,8 +132,8 @@ const BuyPower: NextPage = () => {
         </DialogContent>
       </Dialog>
       <GetUserGeolocationDialog />
-      <div className="flex flex-col mx-8 my-2">
-        <h1 className="text-neutral text-5xl my-8">
+      <div className="flex flex-col my-2 mx-auto" style={{ width: "80%" }}>
+        <h1 className="text-secondary-content text-5xl my-8">
           Choose your charger point
         </h1>
         <div className="p-4 px-8 rounded-3xl bg-black">
@@ -201,7 +201,7 @@ const BuyPower: NextPage = () => {
         </div>
         <button
           onClick={() => {
-            writeAsync();
+            // writeAsync();
           }}
           className="bg-[#444] text-white px-4 py-2 rounded-lg hover:scale-105 transition"
         >

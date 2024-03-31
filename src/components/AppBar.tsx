@@ -19,7 +19,7 @@ export const AppBar: React.FC = () => {
   return (
     <div>
       {/* NavBar / Header */}
-      <div className="navbar flex h-20 flex-row md:mb-2 shadow-lg bg-black text-neutral-content border-b border-zinc-600 bg-opacity-66">
+      <div className="navbar flex h-20 flex-row md:mb-2 shadow-lg bg-secondary text-neutral-content">
         <div className="navbar-start align-items-center">
           <div className="hidden sm:inline w-22 h-22 md:p-2 ml-10">
             <Link
@@ -32,8 +32,6 @@ export const AppBar: React.FC = () => {
               <Logo />
             </Link>
           </div>
-
-          <WalletMultiButtonDynamic className="btn-ghost btn-sm relative flex md:hidden text-lg " />
         </div>
 
         {/* Nav Links */}
@@ -55,7 +53,9 @@ export const AppBar: React.FC = () => {
               href="/sell-power"
               navigationStarts={() => setIsNavOpen(false)}
             />
-            <WalletMultiButtonDynamic className="btn-ghost btn-sm rounded-btn text-lg mr-6 " />
+            <div className="flex items-center justify-center h-full">
+              <WalletMultiButtonDynamic className="btn-ghost btn-sm rounded-btn text-lg" />
+            </div>
           </div>
           <label
             htmlFor="my-drawer"
