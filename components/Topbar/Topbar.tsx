@@ -12,7 +12,7 @@ export default function Topbar() {
         <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Support</a>
       </div>
       <div className="my-auto">
-        <Button>Connect wallet</Button>
+        <Button>Get started</Button>
       </div>
     </div>
   );

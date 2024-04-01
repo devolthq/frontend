@@ -3,7 +3,8 @@ import React from "react";
 import greenArch from "@/public/green_arch.svg";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { Car, ChevronRight, File, ScrollText } from "lucide-react"
+import { Car, ChevronRight, File, PlayIcon, ScrollText, Zap } from "lucide-react"
+import { Play } from "next/font/google";
 
 export default function HeroSection() {
   return (
@@ -18,7 +19,17 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="relative z-1">
-        <div className="text-center pt-40">
+        <div className="text-center pt-24">
+
+          <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3 }}
+          className="bg-neutral-900 border  border-[#212c1d] shadow-lg mb-5 shadow-[#202b1c] flex font-semibold transition rounded-xl text-sm p-2 px-4 w-fit mx-auto ">
+            <Zap strokeWidth={2} size={20} color="#0f0" fill="#0f0" className="mr-2"/>
+            V2 is now live!
+          </motion.div>
+
           <motion.h1
             initial={{ y: 70, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -57,8 +68,8 @@ export default function HeroSection() {
               <ChevronRight className="ml-2 h-4 w-4"/>
             </Button>
             <Button variant={"secondary"}>
-              Read the whitepaper
-              <File className="ml-2 h-4 w-4" />
+              Watch video
+              <PlayIcon fill="#fff" className="ml-2 h-4 w-4" />
                             </Button>
           </motion.div>
         </div>
