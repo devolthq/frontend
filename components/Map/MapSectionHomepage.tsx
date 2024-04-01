@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import { Progress } from "../ui/progress";
 import { stat } from "fs";
 import { MapIcon, MapPinned } from "lucide-react";
-import { toast } from "react-toastify";
 import { useLocation } from "@/contexts/LocationContext";
 import Station from "@/types/station";
 import findClosestStation from "@/utils/calculateNearestStation";
@@ -80,7 +79,7 @@ const MapSectionHomepage = () => {
 
   const Map = useMemo(
     () =>
-      dynamic(() => import("@/components/Map"), {
+      dynamic(() => import("@/components/Map/Map"), {
         loading: () => <p>map is loading</p>,
         ssr: false,
       }),
@@ -123,7 +122,9 @@ const MapSectionHomepage = () => {
         roundedTopCorners={false}
         roundedBottomCorners={true}
         stations={stations}
+        // @ts-ignore
         center={location}
+        // @ts-ignore
         userLocation={location}
         buttonText={"Take me there!"}
       />
