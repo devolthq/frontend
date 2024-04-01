@@ -3,7 +3,7 @@ import React from "react";
 import greenArch from "@/public/green_arch.svg";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { ChevronRight } from "lucide-react"
+import { Car, ChevronRight, File, ScrollText } from "lucide-react"
 
 export default function HeroSection() {
   return (
@@ -37,25 +37,29 @@ export default function HeroSection() {
             </motion.span>
           </motion.h1>
           <motion.p
-          className="text-xl text-neutral-300 mt-4 p-10 max-w-screen-lg mx-auto"
+          className="text-xl leading-relaxed text-neutral-300 mt-4 p-10 max-w-screen-lg mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 3 }}
           >
-            DeVolt is a decentralized platform and protocol designed to facilitate the entry of new players into the electric fueling market. With monetary incentives, logistical facilitations, more accessible stations, and an open, fully transparent market.
+            DeVolt is a decentralized platform and protocol designed to facilitate the entry of new players into the electric fueling market. <span className="font-semibold">
+              
+              With monetary incentives, logistical facilitations, more accessible stations, and an open, fully transparent market.
+              </span>
           </motion.p>
           <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 3 }}
           className="flex justify-center gap-10">
-            <Button>
-              Get Started
+            <Button className="hover:scale-105 transition">
+              Find charging stations near you
+              <ChevronRight className="ml-2 h-4 w-4"/>
             </Button>
             <Button variant={"secondary"}>
               Read the whitepaper
-              <ChevronRight className="ml-2 h-4 w-4"/>
-              </Button>
+              <File className="ml-2 h-4 w-4" />
+                            </Button>
           </motion.div>
         </div>
       </div>
