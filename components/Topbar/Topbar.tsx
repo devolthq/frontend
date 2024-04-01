@@ -8,8 +8,8 @@ export default function Topbar() {
       <Image src={logo} alt="logo" height={50} />
       <div className="flex gap-5 font-medium m-auto">
         <a>Home</a>
-        <a className="text-zinc-600">Whitepaper</a>
-        <a className="text-zinc-600">Support</a>
+        <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Whitepaper</a>
+        <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Support</a>
       </div>
       <div className="my-auto">
         <Button>Connect wallet</Button>
