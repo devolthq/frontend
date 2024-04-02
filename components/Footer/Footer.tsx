@@ -10,6 +10,9 @@ export default function Footer() {
 
         <Image src={logo} alt='logo' height={50}/>
         </div>
+        <div className='text-center text-lg text-neutral-400 pb-4 w-full'>
+          <p>Made in 🇧🇷</p>
+        </div>
         <div className='flex justify-center py-4 gap-4'>
         <GithubIcon strokeWidth={1.5} fill="#777" color='#777' size={50} className='bg-neutral-900 rounded-full p-3' />
         <TwitterIcon strokeWidth={1.5} fill="#6ca6ec" color='#6ca6ec' size={50} className='bg-neutral-900 rounded-full p-3' />
