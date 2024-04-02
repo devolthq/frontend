@@ -23,7 +23,7 @@ export default function MapSectionHome() {
   );
 
   return (
-    <div className="px-10 mb-20">
+    <div className="px-10 my-20">
       <Card className="flex-wrap lg:flex-nowrap max-w-screen-2xl jusri p-4 flex shadow-xl shadow-[#162916] mx-auto">
         <div className="w-[600px] mx-auto p-4 content-around flex flex-wrap flex-row min-w-16">
           <h2 className="font-bold mx-auto text-center text-3xl md:5xl">Find a station near you</h2>

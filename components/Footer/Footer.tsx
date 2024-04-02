@@ -10,7 +10,7 @@ export default function Footer() {
         <Image src={logo} alt='logo' height={50}/>
         </div>
         <div className='w-full flex justify-center'>
-        <p className='mx-auto text-neutral-500 p-2'>Copyright @ 2024 DevoltHQ Limited </p>
+        <p className='mx-auto text-xs md:text-base text-neutral-500 p-2'>Copyright @ 2024 DevoltHQ Limited </p>
         </div>
     </footer>
   )

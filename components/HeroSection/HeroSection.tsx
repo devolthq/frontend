@@ -31,20 +31,20 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.h1
-            initial={{ y: 70, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 70, opacity: 0, color: "#000"}}
+            animate={{ y: 0, opacity: 1,color: "#777" }}
             transition={{ duration: 1.4 }}
             className="font-medium text-4xl lg:text-7xl text-neutral-400"
           >
             Taking eletric <br />
             vehicles{" "}
             <motion.span
-              initial={{ opacity: 0.6 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.4 }}
-              className="font-bold text-white"
+              initial={{ opacity: 0}}
+              animate={{ opacity: 1, }}
+              transition={{ duration: 1, delay: 1.7 }}
+              className="font-bold text-white shadow-white drop-shadow-lg"
             >
-              further.
+              further<span className="text-green-500">.</span>
             </motion.span>
           </motion.h1>
           <motion.p
