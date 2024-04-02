@@ -3,7 +3,7 @@ import React from "react";
 import greenArch from "@/public/green_arch.svg";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { Car, ChevronRight, File, PlayIcon, ScrollText, Zap } from "lucide-react"
+import { Car, ChevronRight, File, PlayIcon, ScrollText, Sparkles } from "lucide-react"
 import { Play } from "next/font/google";
 
 export default function HeroSection() {
@@ -26,7 +26,7 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
           className="bg-neutral-900 border  border-[#212c1d] shadow-lg mb-5 shadow-[#202b1c] flex font-semibold transition rounded-xl text-sm p-2 px-4 w-fit mx-auto ">
-            <Zap strokeWidth={2} size={20} color="#0f0" fill="#0f0" className="mr-2"/>
+            <Sparkles strokeWidth={1} size={20} color="#0f0" fill="#0f0" className="mr-2"/>
             V2 is now live!
           </motion.div>
 
