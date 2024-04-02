@@ -10,6 +10,9 @@ import { Car } from "lucide-react";
 import Footer from "@/components/Footer/Footer";
 import { motion } from "framer-motion";
 import BrandsSection from "@/components/BrandsSection/BrandsSection";
+import MapSectionHomepage from "@/components/Map/MapSectionHomepage";
+import Map from "@/components/Map/Map";
+import MapSectionHome from "@/components/MapSectionHome/MapSectionHome";
 const Home: NextPage = () => {
 
   return (
@@ -26,6 +29,7 @@ const Home: NextPage = () => {
       <CardsSection/>
 
       </motion.div>
+      <MapSectionHome/>
       <Footer/>
     </LocationProvider>
 

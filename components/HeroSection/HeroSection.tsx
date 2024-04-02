@@ -63,12 +63,12 @@ export default function HeroSection() {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 3 }}
           className="flex justify-center gap-10">
-            <Button className="hover:scale-105 transition">
+            <Button className="hover:scale-105  transition shadow-lg shadow-[#3a583a]">
               Find charging stations near you
               <ChevronRight className="ml-2 h-4 w-4"/>
             </Button>
             <Button variant={"secondary"}>
-              Watch video
+              Watch the video
               <PlayIcon fill="#fff" className="ml-2 h-4 w-4" />
                             </Button>
           </motion.div>

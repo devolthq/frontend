@@ -9,7 +9,7 @@ import { KeyRound, Cable,Fuel } from "lucide-react";
 
 export default function CardsSection() {
   return (
-    <div className="text-center max-w-screen-xl mx-auto mb-48">
+    <div className="text-center max-w-screen-xl mx-auto mb-20">
       <h2 className="text-5xl text-neutral-400 font-bold">
         Creating solutions for the energy market
       </h2>

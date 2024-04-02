@@ -41,7 +41,7 @@ const MapUpdater = ({ mapCenter }: any) => {
 };
 
 interface mapProps {
-  stations: any;
+  stations: Station[];
   width?: string;
   height?: string;
   center: [number, number];
@@ -102,8 +102,9 @@ const Map = ({
         <MapUpdater mapCenter={center} />
 
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+
         />
         <Marker icon={iAmHereIcon} position={userLocation}>
           <Popup>Você está aqui!</Popup>
