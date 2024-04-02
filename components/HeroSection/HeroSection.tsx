@@ -33,7 +33,7 @@ export default function HeroSection() {
           <motion.h1
             initial={{ y: 70, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.4, delay: 1 }}
+            transition={{ duration: 1.4 }}
             className="font-medium text-4xl lg:text-7xl text-neutral-400"
           >
             Taking eletric <br />

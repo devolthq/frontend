@@ -24,19 +24,19 @@ export default function MapSectionHome() {
 
   return (
     <div className="px-10 mb-20">
-      <Card className=" flex-wrap max-w-screen-2xl jusri p-4 flex shadow-xl shadow-[#162916] mx-auto">
-        <div className="w-96 mx-auto  p-4 content-around flex flex-wrap flex-row text-center min-w-16">
-          <h2 className="font-bold text-5xl">Find a station near you</h2>
-          <p className="py-6">
+      <Card className="flex-wrap lg:flex-nowrap max-w-screen-2xl jusri p-4 flex shadow-xl shadow-[#162916] mx-auto">
+        <div className="w-[600px] mx-auto p-4 content-around flex flex-wrap flex-row min-w-16">
+          <h2 className="font-bold mx-auto text-center text-3xl md:5xl">Find a station near you</h2>
+          <p className="py-6 hidden text-center md:block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor, Lorem ipsum dolor sit amet, consectetur adipiscing
           elit, sed do eiusmod tempor{" "}
           </p>
-          <Button className="mx-auto">
+          <Button className="mx-auto mt-4 md:mt-0">
             Navigate to nearest station
           </Button>
         </div>
-        <div className="w-full rounded-2xl mx-auto max-w-[770px]">
+        <div className="w-full rounded-2xl mx-auto">
           <Map
             center={[-23.572448, -46.706937]}
             stations={[
@@ -52,6 +52,7 @@ export default function MapSectionHome() {
                 maxVoltage: 220,
               },
             ]}
+            height="300px"
             roundedBottomCorners
             roundedTopCorners
             userLocation={[-23.572448, -46.706937]}

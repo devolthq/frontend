@@ -2,9 +2,17 @@ import React from "react";
 import logo from "@/public/logo_horizontal.svg";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
+
 export default function Topbar() {
   return (
-    <div className="flex p-10 justify-between text-xl max-w-screen-xl mx-auto">
+    <motion.div
+    
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1, delay: 1 }}
+
+    className="flex p-10 justify-between text-xl max-w-screen-xl mx-auto">
       <Image src={logo} alt="logo" height={50} />
       <div className="gap-5 hidden md:flex font-medium m-auto">
         <a>Home</a>
@@ -14,6 +22,6 @@ export default function Topbar() {
       <div className="my-auto">
         <Button>Get started</Button>
       </div>
-    </div>
+    </motion.div>
   );
 }

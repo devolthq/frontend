@@ -7,7 +7,7 @@ import Haval from "@/public/haval.svg";
 
 export default function BrandsSection() {
   return (
-    <div className="text-center max-w-screen-xl mx-auto my-28">
+    <div className="text-center max-w-screen-xl mx-auto my-10 lg:my-20">
       <h2 className="text-xl md:text-2xl  mb-6 text-neutral-200 ">
       Your favorite companies trust us    
        </h2>
