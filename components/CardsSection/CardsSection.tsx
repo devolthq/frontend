@@ -16,7 +16,7 @@ export default function CardsSection() {
               size={80}
               className="md:p-0 p-4 md:mx-auto"
             />
-            <p className="text-3xl  mr-4 md:mr-0 content-center font-bold md:w-full">
+            <p className="text-3xl mr-4 md:mr-0 self-center font-bold md:w-full">
               Stations
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function CardsSection() {
               size={80}
               className="md:p-0 p-4 md:mx-auto"
             />
-            <p className="text-3xl  mr-4 md:mr-0 content-center font-bold md:w-full">
+            <p className="text-3xl self-center  mr-4 md:mr-0 content-center font-bold md:w-full">
               Secure
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function CardsSection() {
               size={80}
               className="md:p-0 p-4 md:mx-auto"
             />
-            <p className="text-3xl mr-4 md:mr-0 content-center font-bold md:w-full">
+            <p className="text-3xl self-center  mr-4 md:mr-0 content-center font-bold md:w-full">
               Charge
             </p>
           </div>

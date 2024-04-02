@@ -24,7 +24,7 @@ export default function MapSectionHome() {
 
   return (
     <div className="px-10 mb-20">
-      <Card className="flex-wrap lg:flex-nowrap max-w-screen-2xl jusri px-4 pb-4 flex shadow-xl shadow-[#162916] mx-auto">
+      <Card className="flex-wrap lg:flex-nowrap max-w-screen-2xl px-4 pb-4 flex shadow-xl shadow-[#162916] mx-auto">
         <div className="w-[600px] mx-auto p-4 content-around flex flex-wrap flex-row min-w-16">
           <h2 className="font-bold mx-auto text-center text-3xl md:5xl">Find a station near you</h2>
           <p className="py-6 hidden text-center md:block">
@@ -36,7 +36,7 @@ export default function MapSectionHome() {
             Navigate to nearest station
           </Button>
         </div>
-        <div className="w-full rounded-2xl mx-auto">
+        <div className="w-full rounded-2xl mt-3 m-auto">
           <Map
             center={[-23.572448, -46.706937]}
             stations={[

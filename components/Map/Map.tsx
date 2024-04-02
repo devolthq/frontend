@@ -68,10 +68,10 @@ const Map = ({
   const [containerStyle, setContainerStyle] = useState<MapContainerProps["style"]>({
     width: width || "100%",
     height: height || "550px",
-    borderTopLeftRadius: roundedTopCorners ? "20px" : "0",
-    borderTopRightRadius: roundedTopCorners ? "20px" : "0",
-    borderBottomLeftRadius: roundedBottomCorners ? "20px" : "0",
-    borderBottomRightRadius: roundedBottomCorners ? "20px" : "0",
+    borderTopLeftRadius: roundedTopCorners ? "12px" : "0",
+    borderTopRightRadius: roundedTopCorners ? "12px" : "0",
+    borderBottomLeftRadius: roundedBottomCorners ? "12px" : "0",
+    borderBottomRightRadius: roundedBottomCorners ? "12px" : "0",
     margin: "auto",
   });
 
@@ -79,10 +79,10 @@ const Map = ({
     setContainerStyle({
       width: width || "100%",
       height: height || "550px",
-      borderTopLeftRadius: roundedTopCorners ? "20px" : "0",
-      borderTopRightRadius: roundedTopCorners ? "20px" : "0",
-      borderBottomLeftRadius: roundedBottomCorners ? "20px" : "0",
-      borderBottomRightRadius: roundedBottomCorners ? "20px" : "0",
+      borderTopLeftRadius: roundedTopCorners ? "12px" : "0",
+      borderTopRightRadius: roundedTopCorners ? "12px" : "0",
+      borderBottomLeftRadius: roundedBottomCorners ? "12px" : "0",
+      borderBottomRightRadius: roundedBottomCorners ? "12px" : "0",
       margin: "auto",
     });
   }, [width, height]);

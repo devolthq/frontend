@@ -25,8 +25,8 @@ const Home: NextPage = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 4, duration: 1}}
       >
-      <MapSectionHome/>
       <BrandsSection/>
+      <MapSectionHome/>
       <CardsSection/>
 
       </motion.div>

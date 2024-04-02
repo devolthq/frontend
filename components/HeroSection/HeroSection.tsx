@@ -62,7 +62,7 @@ export default function HeroSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 3 }}
-          className="flex flex-wrap justify-center mb-32 md:mb-0 mx-4 gap-10">
+          className="flex flex-wrap justify-center mb-20 md:mb-0 mx-4 gap-10">
             <Button className="hover:scale-105  transition shadow-lg shadow-[#3a583a]">
               Find charging stations near you
               <ChevronRight className="ml-2 h-4 w-4"/>
