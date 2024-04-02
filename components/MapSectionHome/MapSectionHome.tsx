@@ -1,5 +1,4 @@
-import React from "react";
-import Map from "../Map/Map";
+import React, { useMemo } from "react";
 import {
   Card,
   CardContent,
@@ -9,8 +8,22 @@ import {
 } from "../ui/card";
 import { KeyRound } from "lucide-react";
 import { Button } from "../ui/button";
+import dynamic from "next/dynamic";
 
-export default function MapSectionHome() {
+export default function MapSectionHome() {8
+
+
+    const Map = useMemo(
+        () =>
+          dynamic(() => import("@/components/Map/Map"), {
+            loading: () => <p>map is loading</p>,
+            ssr: false,
+          }),
+        [],
+      );
+    
+
+
   return (
     <div className=" flex flex-wrap text-center max-w-screen-2xl px-4 gap-4 mx-auto mb-20">
       <Card className="max-w-sm min-w-sm">
@@ -35,7 +48,7 @@ export default function MapSectionHome() {
                 batteryLevel: 50,
                 id: 1,
                 latitude: -23.572448,
-                longitude: -46.806937,
+                longitude: -46.06937,
                 maxCapacity: 100,
                 meanPrice: 2.5,
                 availablePlugs: "asdgadf",
