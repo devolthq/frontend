@@ -34,7 +34,7 @@ export default function HeroSection() {
             initial={{ y: 70, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.4, delay: 1 }}
-            className="font-medium text-7xl text-neutral-400"
+            className="font-medium text-4xl lg:text-7xl text-neutral-400"
           >
             Taking eletric <br />
             vehicles{" "}
@@ -48,7 +48,7 @@ export default function HeroSection() {
             </motion.span>
           </motion.h1>
           <motion.p
-          className="text-xl leading-relaxed text-neutral-300 mt-4 p-10 max-w-screen-lg mx-auto"
+          className="lg:text-xl leading-relaxed text-neutral-300 mt-4 p-10 max-w-screen-lg mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 3 }}
@@ -62,7 +62,7 @@ export default function HeroSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 3 }}
-          className="flex justify-center gap-10">
+          className="flex flex-wrap justify-center mx-4 gap-10">
             <Button className="hover:scale-105  transition shadow-lg shadow-[#3a583a]">
               Find charging stations near you
               <ChevronRight className="ml-2 h-4 w-4"/>

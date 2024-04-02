@@ -6,7 +6,7 @@ export default function Topbar() {
   return (
     <div className="flex p-10 justify-between text-xl max-w-screen-xl mx-auto">
       <Image src={logo} alt="logo" height={50} />
-      <div className="flex gap-5 font-medium m-auto">
+      <div className="gap-5 hidden md:flex font-medium m-auto">
         <a>Home</a>
         <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Whitepaper</a>
         <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Support</a>

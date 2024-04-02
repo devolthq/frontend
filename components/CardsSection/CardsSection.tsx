@@ -10,10 +10,10 @@ import { KeyRound, Cable,Fuel } from "lucide-react";
 export default function CardsSection() {
   return (
     <div className="text-center max-w-screen-xl mx-auto mb-20">
-      <h2 className="text-5xl text-neutral-400 font-bold">
+      <h2 className="text-3xl lg:text-5xl text-neutral-200 font-bold">
         Creating solutions for the energy market
       </h2>
-      <div className="flex gap-10 mt-10 justify-center">
+      <div className="flex gap-10 flex-wrap mt-10 mx-4 justify-center">
         <Card className="max-w-sm">
           <CardHeader>
             <KeyRound strokeWidth={1.5} size={80} className="mx-auto pb-2" />

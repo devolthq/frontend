@@ -104,6 +104,8 @@ const Map = ({
         <TileLayer
           // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          accessToken="3649afdf-ff6e-40b4-8d98-ef0deb099145"
+          
 
         />
         <Marker icon={iAmHereIcon} position={userLocation}>

@@ -26,10 +26,10 @@ const Home: NextPage = () => {
       transition={{ delay: 4, duration: 1}}
       >
       <BrandsSection/>
+      <MapSectionHome/>
       <CardsSection/>
 
       </motion.div>
-      <MapSectionHome/>
       <Footer/>
     </LocationProvider>
 
