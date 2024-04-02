@@ -75,7 +75,7 @@ export default function HeroSection() {
           <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 3.5, repeat: 4, repeatType: "reverse"}}
+          transition={{ duration: 1, delay: 3.5, repeat: 8, repeatType: "reverse"}}
           >
           <ChevronDown className="mx-auto hidden md:block mt-16 p-2 md:p-0 md:mt-40 " color="#ccc" size={70} strokeWidth={1}/>
           </motion.div>
