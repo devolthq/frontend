@@ -3,23 +3,23 @@ import React from "react";
 import greenArch from "@/public/green_arch.svg";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import { Car, ChevronRight, File, PlayIcon, ScrollText, Sparkles } from "lucide-react"
+import { Car, ChevronDown, ChevronRight, File, PlayIcon, ScrollText, Sparkles } from "lucide-react"
 import { Play } from "next/font/google";
 
 export default function HeroSection() {
   return (
-    <div className="relative mx-auto max-w-screen-2xl">
+    <div className="h-[90vh] pt-20 relative mx-auto max-w-screen-2xl">
       <motion.div
         animate={{ opacity: 1 }}
         transition={{ duration: 6, ease: "easeInOut" }}
         initial={{ opacity: 0 }}
-        className="absolute inset-0 w-full"
+        className="absolute top-10 inset-0 w-full"
       >
         <Image className="w-full" src={greenArch} alt="background-pattern" />
       </motion.div>
 
       <div className="relative z-1">
-        <div className="text-center pt-24">
+        <div className="text-center pt-16">
 
           <motion.div
           initial={{ opacity: 0 }}
@@ -34,7 +34,7 @@ export default function HeroSection() {
             initial={{ y: 70, opacity: 0, color: "#000"}}
             animate={{ y: 0, opacity: 1,color: "#777" }}
             transition={{ duration: 1.4 }}
-            className="font-medium text-4xl lg:text-7xl text-neutral-400"
+            className="font-medium text-5xl lg:text-7xl text-neutral-400"
           >
             Taking eletric <br />
             vehicles{" "}
@@ -71,6 +71,13 @@ export default function HeroSection() {
               Watch the video
               <PlayIcon fill="#fff" className="ml-2 h-4 w-4" />
                             </Button>
+          </motion.div>
+          <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3.5, repeat: 4, repeatType: "reverse"}}
+          >
+          <ChevronDown className="mx-auto mt-16 p-2 md:p-0 md:mt-40 " color="#ccc" size={70} strokeWidth={1}/>
           </motion.div>
         </div>
       </div>
