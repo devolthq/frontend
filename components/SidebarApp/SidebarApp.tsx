@@ -1,14 +1,31 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import bag from "./assets/bag.svg";
 import cart from "./assets/cart.svg";
 import dash from "./assets/dash.svg";
 
-const SidebarApp = () => {
-  const [activeIcon, setActiveIcon] = useState<number | null>(null);
+interface SidebarAppProps {
+  setActivePage: (page: string) => void;
+}
+
+const SidebarApp: React.FC<SidebarAppProps> = ({ setActivePage }) => {
+  const [activeIcon, setActiveIcon] = useState<number>(0);
 
   const handleIconClick = (index: number) => {
     setActiveIcon(index);
+    switch (index) {
+      case 0:
+        setActivePage("dashboard");
+        break;
+      case 1:
+        setActivePage("paginaDois");
+        break;
+      case 2:
+        setActivePage("paginaTres");
+        break;
+      default:
+        setActivePage("dashboard");
+    }
   };
 
   return (
@@ -21,11 +38,10 @@ const SidebarApp = () => {
       >
         <Image
           src={dash}
-          alt="dash icon"
+          alt="Dashboard icon"
+          width={32}
           height={32}
-          style={{
-            filter: activeIcon === 0 ? "invert(1)" : "invert(0)",
-          }}
+          style={{ filter: activeIcon === 0 ? "invert(1)" : "invert(0)" }}
         />
       </div>
       <div
@@ -36,7 +52,8 @@ const SidebarApp = () => {
       >
         <Image
           src={cart}
-          alt="cargo icon"
+          alt="Pagina Dois icon"
+          width={32}
           height={32}
           style={{ filter: activeIcon === 1 ? "invert(1)" : "invert(0)" }}
         />
@@ -49,7 +66,8 @@ const SidebarApp = () => {
       >
         <Image
           src={bag}
-          alt="store icon"
+          alt="Pagina Tres icon"
+          width={32}
           height={32}
           style={{ filter: activeIcon === 2 ? "invert(1)" : "invert(0)" }}
         />
