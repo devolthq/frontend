@@ -1,14 +1,27 @@
 import Image from "next/image";
+import { useState } from "react";
 import React from "react";
 import greenArch from "@/public/green_arch.svg";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
+import VideoModal from "../VideoModal/VideoModal";
 import { Car, ChevronDown, ChevronRight, File, PlayIcon, ScrollText, Sparkles } from "lucide-react"
 import { Play } from "next/font/google";
 
 export default function HeroSection() {
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <div className="md:h-[90vh] pt-20 relative mx-auto max-w-screen-2xl">
+    <div className="md:h-[85vh] 2xl:h-[65vh] pt-20 relative mx-auto max-w-screen-2xl">
       <motion.div
         animate={{ opacity: 1 }}
         transition={{ duration: 6, ease: "easeInOut" }}
@@ -67,17 +80,11 @@ export default function HeroSection() {
               Find charging stations near you
               <ChevronRight className="ml-2 h-4 w-4"/>
             </Button>
-            <Button variant={"secondary"}>
+            <Button variant={"secondary"} onClick={openModal}>
               Watch the video
               <PlayIcon fill="#fff" className="ml-2 h-4 w-4" />
-                            </Button>
-          </motion.div>
-          <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 3.5, repeat: 8, repeatType: "reverse"}}
-          >
-          <ChevronDown className="mx-auto hidden md:block mt-16 p-2 md:p-0 md:mt-40 " color="#ccc" size={70} strokeWidth={1}/>
+            </Button>
+            {isModalOpen && <VideoModal onClose={closeModal} />}
           </motion.div>
         </div>
       </div>
