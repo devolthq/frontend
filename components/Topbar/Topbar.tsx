@@ -3,7 +3,8 @@ import logo from "@/public/logo_horizontal.svg";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
-
+import ConnectWallet from "../ConnectWallet/ConnectWallet";
+import { Wallet } from "@/contexts/WalletContext";
 export default function Topbar() {
   return (
     <motion.div
@@ -20,7 +21,9 @@ export default function Topbar() {
         <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Support</a>
       </div>
       <div className="my-auto">
-        <Button>Get started</Button>
+        <Wallet>
+          <ConnectWallet />
+        </Wallet>
       </div>
     </motion.div>
   );
