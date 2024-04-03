@@ -2,7 +2,7 @@ import "../../app/globals.css";
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
 
-const ApplicationDashboard = () => {
+const Buy = () => {
   const Map = useMemo(
     () =>
       dynamic(() => import("@/components/Map/Map"), {
@@ -13,10 +13,9 @@ const ApplicationDashboard = () => {
   );
 
   return (
-    <div className="h-full  ml-24 rounded-md ">
+    <div className="h-full   rounded-md ">
       <div className="grid grid-cols-3 grid-rows-1 gap-9 bg-zinc-900  rounded-xl m-8">
         <div className="col-span-2 m-6">
-          {" "}
           <Map
             center={[-23.572448, -46.706937]}
             stations={[
@@ -50,4 +49,4 @@ const ApplicationDashboard = () => {
   );
 };
 
-export default ApplicationDashboard;
+export default Buy;

@@ -1,25 +1,26 @@
 "use client";
 
-import React, { useState } from 'react';
-import HeaderApp from '../../components/HeaderApplication/HeaderApp';
-import SidebarApp from '../../components/SidebarApp/SidebarApp';
-import { LocationProvider } from '@/contexts/LocationContext';
-import ApplicationDashboard from '@/components/ApplicationDashboard/ApplicationDashboard';
+import React, { useState } from "react";
+import HeaderApp from "../../components/HeaderApplication/HeaderApp";
+import SidebarApp from "../../components/SidebarApp/SidebarApp";
+import { LocationProvider } from "@/contexts/LocationContext";
+import Buy from "@/components/Buy/Buy";
+import Dashboard from "@/components/Dashboard/Dashboard";
 
 
 const ApplicationHome = () => {
-  const [activePage, setActivePage] = useState('dashboard');
+  const [activePage, setActivePage] = useState("dashboard");
 
   const getPageComponent = () => {
     switch (activePage) {
-      case 'dashboard':
-        return <ApplicationDashboard />;
-      case 'paginaDois':
+      case "dashboard":
+        return <Dashboard />;
+      case "paginaDois":
         return <div>Pagina Dois</div>;
-      case 'paginaTres':
-        return <div>Pagina Tres</div>;
+      case "paginaTres":
+        return <Buy />;
       default:
-        return <ApplicationDashboard />;
+        return <Dashboard />;
     }
   };
 
@@ -27,11 +28,9 @@ const ApplicationHome = () => {
     <LocationProvider>
       <div className="flex h-screen bg-[#070707]">
         <SidebarApp setActivePage={setActivePage} />
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col ">
           <HeaderApp />
-          <main className="flex-1 p-4 mt-14">
-            {getPageComponent()}
-          </main>
+          <main className="flex-1 p-4 mt-14 ml-24">{getPageComponent()}</main>
         </div>
       </div>
     </LocationProvider>
@@ -39,4 +38,3 @@ const ApplicationHome = () => {
 };
 
 export default ApplicationHome;
-
