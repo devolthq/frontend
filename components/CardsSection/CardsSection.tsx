@@ -5,11 +5,11 @@ import { KeyRound, Cable, Fuel } from "lucide-react";
 export default function CardsSection() {
   return (
     <div className="text-center max-w-screen-xl mx-auto mb-20">
-      <h2 className="text-3xl lg:text-5xl text-neutral-200 font-semibold drop-shadow-xl shadow-white ">
+      <h2 className="text-3xl lg:text-5xl text-neutral-200 font-semibold drop-shadow-xl shadow-white md:pt-4">
         Creating solutions for the energy market
       </h2>
-      <div className="flex gap-4 md:gap-10 flex-wrap mt-10 mx-4 justify-center">
-        <Card className="max-w-sm">
+      <div className="flex gap-4 md:gap-14 flex-wrap mt-8 justify-center mx-10 md:mx-0">
+        <Card className="max-w-sm bg-[#0e0f0e] border-2 border-[#161d15]">
           <div className="flex md:flex-wrap md:p-4 gap-2 justify-center">
             <Fuel
               strokeWidth={1.5}
@@ -26,7 +26,7 @@ export default function CardsSection() {
             elit, sed do eiusmod tempor{" "}
           </CardContent>
         </Card>{" "}
-        <Card className="max-w-sm">
+        <Card className="max-w-sm bg-[#0e0f0e] border-2 border-[#161d15]">
           <div className="flex md:flex-wrap md:p-4 gap-2 justify-center">
             <KeyRound
               strokeWidth={1.5}
@@ -43,7 +43,7 @@ export default function CardsSection() {
             elit, sed do eiusmod tempor{" "}
           </CardContent>
         </Card>
-        <Card className="max-w-sm">
+        <Card className="max-w-sm bg-[#0e0f0e] border-2 border-[#161d15]">
           <div className="flex md:flex-wrap md:p-4 gap-2 justify-center">
             <Cable
               strokeWidth={1.5}

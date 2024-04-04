@@ -13,6 +13,8 @@ import BrandsSection from "@/components/BrandsSection/BrandsSection";
 import MapSectionHomepage from "@/components/Map/MapSectionHomepage";
 import Map from "@/components/Map/Map";
 import MapSectionHome from "@/components/MapSectionHome/MapSectionHome";
+import SupportSection from "@/components/SupportSection/SupportSection"; 
+
 const Home: NextPage = () => {
 
   return (
@@ -26,9 +28,9 @@ const Home: NextPage = () => {
       transition={{ delay: 4, duration: 1}}
       >
       <BrandsSection/>
-      <MapSectionHome/>
       <CardsSection/>
-
+      <MapSectionHome/>    
+      <SupportSection />
       </motion.div>
       <Footer/>
     </LocationProvider>
