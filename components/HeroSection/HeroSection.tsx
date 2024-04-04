@@ -20,7 +20,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="h-fit mb-12 pt-20 relative mx-auto max-w-screen-2xl">
+    <div className="h-fit md:mb-12 mb-8 pt-20 relative mx-auto max-w-screen-2xl">
       <motion.div
         animate={{ opacity: 1 }}
         transition={{ duration: 6, ease: "easeInOut" }}
@@ -92,7 +92,7 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3.5, repeat: 8, repeatType: "reverse"}}
           >
-          <ChevronDown className="mx-auto hidden md:block p-2 md:p-0 mt-8 " color="#ccc" size={70} strokeWidth={1}/>
+          <ChevronDown className="mx-auto hidden md:block p-2 md:p-0 md:mt-8 " color="#ccc" size={70} strokeWidth={1}/>
           </motion.div>
     </div>
   );
