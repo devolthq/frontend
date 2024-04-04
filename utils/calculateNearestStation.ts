@@ -19,7 +19,7 @@ export default function findClosestStation(coords: Station[], yourCoords: Coords
   console.log(yourCoords);
 
   if (yourCoords.x == 0 || yourCoords.y == 0) {
-    return { station: null, distance: 0 };
+    return { station: null, distance: null };
   }
   let maisProxima = coords[0];
   let menorDistancia = calcularDistanciaSimplificada(yourCoords, maisProxima);
