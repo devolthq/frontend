@@ -5,8 +5,7 @@ import greenArch from "@/public/green_arch.svg";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import VideoModal from "../VideoModal/VideoModal";
-import { Car, ChevronDown, ChevronRight, File, PlayIcon, ScrollText, Sparkles } from "lucide-react"
-import { Play } from "next/font/google";
+import { ChevronDown, ChevronRight, PlayIcon, Sparkles } from "lucide-react"
 
 export default function HeroSection() {
 
@@ -21,7 +20,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="h-fit mb-16 pt-20 relative mx-auto max-w-screen-2xl">
+    <div className="h-fit mb-12 pt-20 relative mx-auto max-w-screen-2xl">
       <motion.div
         animate={{ opacity: 1 }}
         transition={{ duration: 6, ease: "easeInOut" }}
@@ -88,6 +87,13 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
+      <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3.5, repeat: 8, repeatType: "reverse"}}
+          >
+          <ChevronDown className="mx-auto hidden md:block p-2 md:p-0 mt-8 " color="#ccc" size={70} strokeWidth={1}/>
+          </motion.div>
     </div>
   );
 }
