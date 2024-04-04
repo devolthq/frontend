@@ -5,7 +5,13 @@ import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import ConnectWallet from "../ConnectWallet/ConnectWallet";
 import { Wallet } from "@/contexts/WalletContext";
+
 export default function Topbar() {
+
+  const handleClick = () => {
+    console.log('Botão clicado');
+  };
+
   return (
     <motion.div
     
@@ -21,9 +27,9 @@ export default function Topbar() {
         <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Support</a>
       </div>
       <div className="my-auto">
-        <Wallet>
-          <ConnectWallet />
-        </Wallet>
+      <Button className="hover:scale-105 transition" onClick={handleClick}>
+        Get started
+      </Button>
       </div>
     </motion.div>
   );

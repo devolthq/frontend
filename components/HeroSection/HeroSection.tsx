@@ -21,7 +21,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="md:h-[85vh] 2xl:h-[65vh] pt-20 relative mx-auto max-w-screen-2xl">
+    <div className="h-fit mb-16 pt-20 relative mx-auto max-w-screen-2xl">
       <motion.div
         animate={{ opacity: 1 }}
         transition={{ duration: 6, ease: "easeInOut" }}

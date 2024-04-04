@@ -5,7 +5,7 @@ import { KeyRound, Cable, Fuel } from "lucide-react";
 export default function CardsSection() {
   return (
     <div className="text-center max-w-screen-xl mx-auto mb-20">
-      <h2 className="text-3xl lg:text-5xl text-neutral-200 font-bold">
+      <h2 className="text-3xl lg:text-5xl text-neutral-200 font-semibold drop-shadow-xl shadow-white ">
         Creating solutions for the energy market
       </h2>
       <div className="flex gap-4 md:gap-10 flex-wrap mt-10 mx-4 justify-center">
