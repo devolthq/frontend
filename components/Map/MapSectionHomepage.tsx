@@ -48,7 +48,7 @@ const MapSectionHomepage = () => {
   const { location, updateLocation } = useLocation();
   const [stations, setStations] = useState(mockStations);
   const [closestStation, setClosestStation] = useState<Station | null>(null);
-  const [closestStationDistance, setClosestStationDistance] = useState<string | number>(0);
+  const [closestStationDistance, setClosestStationDistance] = useState<any>(0);
 
   useEffect(() => {
     queryAllStations()

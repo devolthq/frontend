@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import GetUserGeolocationDialog from "../GetUserGeolocation/GetUserGeolocation";
 import { BuyEnergy } from "./BuyEnergy";
 import { StationData } from "../Station/StationData";
-import { Dialog } from "../ui/dialog";
-import { DialogContent, DialogDescription, DialogTitle } from "../ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "../ui/dialog";
 import { MapSectionBuypage } from "../Map/MapSectionBuyPage";
-import { Station } from "../../types/station";
+import Station from "../../types/station";
 import Image from "next/image";
 import arrow from "./assets/arrow.svg";
 import arrowReverse from "./assets/arrowreverse.svg";
@@ -62,16 +65,7 @@ const Buy = () => {
   const [stations, setStations] = useState<Station[]>(mockStations);
   const [value, setValue] = useState(0);
   const [openPopUp, setOpenPopUp] = useState(false);
-  const [showBuyEnergyPage, setShowBuyEnergyPage] = useState(false); // Controla a exibição da página BuyEnergy
-
-  const placeBid = () => {
-    console.log(
-      "Bid placed for station",
-      selectedStation?.id,
-      "with value",
-      value
-    );
-  };
+  const [showBuyEnergyPage, setShowBuyEnergyPage] = useState(false);
 
   const handleNextStep = () => {
     if (!selectedStation) {
@@ -81,15 +75,20 @@ const Buy = () => {
     setShowBuyEnergyPage(true);
   };
 
+  const price = selectedStation?.meanPrice || 0;
+
   if (showBuyEnergyPage) {
     return (
       <BuyEnergy
-        selectedStation={selectedStation}
+        averagePrice={price}
         value={value}
         setValue={setValue}
         onSubmit={() => setOpenPopUp(true)}
-      />
+      ></BuyEnergy>
     );
+  }
+  function placeBid() {
+    throw new Error("Function not implemented.");
   }
 
   return (
@@ -153,7 +152,7 @@ const Buy = () => {
                 Amount of Kw you are buying: {value} Kws
               </p>
               <p className="pt-6 text-xl font-semibold">
-                Total to be paid: {value * selectedStation?.meanPrice || 0}{" "}
+                Total to be paid: {value * (selectedStation?.meanPrice ?? 0)}{" "}
                 Voltz
               </p>
             </DialogDescription>

@@ -29,7 +29,7 @@ const GetUserGeolocationDialog = () => {
     } else {
       setDialogOpen(true);
     }
-  }, [geolocation, userLocation]);
+  }, [geolocation, userLocation, updateLocation]); // Adicionado updateLocation nas dependências
 
   const ignoreGeolocation = () => {
     setUserLocation([-22.980214, -43.217508])
@@ -41,10 +41,10 @@ const GetUserGeolocationDialog = () => {
         <DialogContent className="bg-[#1a1a1a] border-none shadow-lg">
             <DialogTitle className="text-3xl flex text-white pb-2 gap-3"><LocateIcon color="#0f0" size={37}></LocateIcon> Allow access to your location</DialogTitle>
             <DialogDescription>
-              Don't worry, we won't store your location data. We only need to know your location to show you the nearest chargers.
+              Don&apos;t worry, we won&apos;t store your location data. We only need to know your location to show you the nearest chargers.
             </DialogDescription>
             <button onClick={ignoreGeolocation} className="bg-[#333] text-[#999] font-semibold px-4 py-2 rounded-lg hover:scale-105 transition">
-              I don't care, use a sample location
+              I don&apos;t care, use a sample location
             </button>
         </DialogContent>
       </Dialog>

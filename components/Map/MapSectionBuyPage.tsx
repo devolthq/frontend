@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useLocation } from "../../contexts/LocationContext";
 import queryAllStations from "../../utils/queryAllStations";
 
-interface mapSectionBuypageProps {
+interface MapSectionBuypageProps {
   roundedTopCorners: boolean;
   roundedBottomCorners: boolean;
   stations: any;
@@ -19,37 +19,37 @@ export const MapSectionBuypage = ({
   setStations,
   width,
   setSelectedStation,
-}: mapSectionBuypageProps) => {
-  const { location, updateLocation } = useLocation();
+}: MapSectionBuypageProps) => {
+  const { location } = useLocation();
 
   useEffect(() => {
-    queryAllStations().then((stations) => {
-      setStations(stations);
-    });
-  }, [location]);
+    queryAllStations().then(setStations);
+  }, [setStations]);
 
   const Map = useMemo(
     () =>
       dynamic(() => import("./Map"), {
-        loading: () => <p>map is loading</p>,
+        loading: () => <p>Map is loading...</p>,
         ssr: false,
       }),
     []
   );
 
+  if (!location || location.some(coord => coord === null)) {
+    return <p>Location data is not available.</p>;
+  }
+
   return (
-    <>
-      <Map
-        buttonText="Select"
-        userLocation={location}
-        roundedTopCorners={roundedTopCorners}
-        roundedBottomCorners={roundedBottomCorners}
-        stations={stations}
-        center={location}
-        width={width}
-        setSelectedStation={setSelectedStation}
-        height="300px"
-      />
-    </>
+    <Map
+      buttonText="Select"
+      userLocation={location}
+      roundedTopCorners={roundedTopCorners}
+      roundedBottomCorners={roundedBottomCorners}
+      stations={stations}
+      center={location}
+      width={width}
+      setSelectedStation={setSelectedStation}
+      height="300px"
+    />
   );
 };

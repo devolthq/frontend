@@ -44,8 +44,8 @@ interface mapProps {
   stations: Station[];
   width?: string;
   height?: string;
-  center: [number, number];
-  userLocation: [number, number];
+  center: any;
+  userLocation: any;
   buttonText?: string;
   roundedTopCorners: boolean;
   roundedBottomCorners: boolean;

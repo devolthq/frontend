@@ -5,13 +5,21 @@ import Image from "next/image";
 import battery from "./assets/battery.svg";
 import arrow from "./assets/arrow.svg";
 import arrowReverse from "./assets/arrowreverse.svg";
+import Station from "@/types/station";
+import { SetStateAction } from "react";
+import { Dispatch } from "react";
+
+import { ReactNode } from "react";
 
 interface BuyEnergyProps {
   averagePrice: number;
-  children: React.ReactNode;
+  value: number;
+  // children: ReactNode;
+  setValue: Dispatch<SetStateAction<number>>;
+  onSubmit: () => void;
 }
 
-export const BuyEnergy = ({ averagePrice, children }: BuyEnergyProps) => {
+export const BuyEnergy = ({ averagePrice }: BuyEnergyProps) => {
   const [value, setValue] = useState(50); // Valor inicial do slider
 
   const handleChange = (newValue: number) => {
@@ -94,14 +102,12 @@ export const BuyEnergy = ({ averagePrice, children }: BuyEnergyProps) => {
               height: 10,
             }}
           />
-          <p className="font-bold text-2xl px-2">{value}%</p>
-          <p className="text-sm -m-3 px-2">VOLTZ/KW</p>
-        </div>
-        <div className="flex justify-between mt-12">
-          <p className="font-medium text-xl">
-            Total to be paid: ${(value * averagePrice).toFixed(2)}
+          <h1 className="mt-12 font-bold text-3xl">Target Charge Level</h1>
+          <p className="font-extralight text-5xl px-2 mt-4">{value}%</p>
+          <p className="  text-lg  mt-2 px-2 font-medium ">
+            Total to be paid: V${(value * averagePrice).toFixed(2)}
           </p>
-          {children}
+          129,00
         </div>
         <div className="absolute bottom-0 left-0 right-0">
           <div className="flex justify-between m-4">
