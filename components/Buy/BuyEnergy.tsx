@@ -107,7 +107,7 @@ export const BuyEnergy = ({ averagePrice }: BuyEnergyProps) => {
           <p className="  text-lg  mt-2 px-2 font-medium ">
             Total to be paid: V${(value * averagePrice).toFixed(2)}
           </p>
-          129,00
+          
         </div>
         <div className="absolute bottom-0 left-0 right-0">
           <div className="flex justify-between m-4">
