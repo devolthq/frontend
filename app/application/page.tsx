@@ -7,7 +7,6 @@ import { LocationProvider } from "@/contexts/LocationContext";
 import Buy from "@/components/Buy/Buy";
 import Dashboard from "@/components/Dashboard/Dashboard";
 
-
 const ApplicationHome = () => {
   const [activePage, setActivePage] = useState("dashboard");
 
@@ -15,8 +14,6 @@ const ApplicationHome = () => {
     switch (activePage) {
       case "dashboard":
         return <Dashboard />;
-      case "paginaDois":
-        return <div>Pagina Dois</div>;
       case "paginaTres":
         return <Buy />;
       default:
@@ -28,7 +25,7 @@ const ApplicationHome = () => {
     <LocationProvider>
       <div className="flex h-screen bg-[#070707]">
         <SidebarApp setActivePage={setActivePage} />
-        <div className="flex-1 flex flex-col ">
+        <div className="flex-1 flex flex-col">
           <HeaderApp />
           <main className="flex-1 p-4 mt-14 ml-24">{getPageComponent()}</main>
         </div>
