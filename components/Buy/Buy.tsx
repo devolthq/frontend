@@ -81,12 +81,15 @@ const Buy = () => {
     return (
       <BuyEnergy
         averagePrice={price}
+        selectedStation={selectedStation}
+        setSelectedStation={setSelectedStation}
         value={value}
         setValue={setValue}
         onSubmit={() => setOpenPopUp(true)}
-      ></BuyEnergy>
+      />
     );
   }
+  
   function placeBid() {
     throw new Error("Function not implemented.");
   }
