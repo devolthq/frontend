@@ -3,14 +3,17 @@ import logo from "@/public/logo_horizontal.svg";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
-import ConnectWallet from "../ConnectWallet/ConnectWallet";
-import { Wallet } from "@/contexts/WalletContext";
 
 export default function Topbar() {
 
   const handleClick = () => {
     console.log('Botão clicado');
   };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <motion.div
@@ -24,7 +27,7 @@ export default function Topbar() {
       <div className="gap-5 hidden md:flex font-medium m-auto">
         <a>Home</a>
         <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Whitepaper</a>
-        <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer">Support</a>
+        <a className="text-zinc-600 transition hover:text-white hover:cursor-pointer" onClick={() => scrollToSection("support")}>Support</a>
       </div>
       <div className="my-auto">
       <Button className="hover:scale-105 transition" onClick={handleClick}>
