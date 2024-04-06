@@ -10,6 +10,8 @@ import { SetStateAction } from "react";
 import { Dispatch } from "react";
 
 import { ReactNode } from "react";
+import SelectPlug from "./SelectPlug";
+import Buy from "./Buy";
 
 interface BuyEnergyProps {
   averagePrice: number;
@@ -20,7 +22,33 @@ interface BuyEnergyProps {
 }
 
 export const BuyEnergy = ({ averagePrice }: BuyEnergyProps) => {
-  const [value, setValue] = useState(50); // Valor inicial do slider
+  const [value, setValue] = useState(50);
+  const [showSelectPlug, setShowSelectPlug] = useState(false);
+  const [showBackStep, setShowBackStep] = useState(false);
+
+  if (showSelectPlug) {
+    return (
+      <SelectPlug
+      // averagePrice={price}
+      // value={value}
+      // setValue={setValue}
+      // onSubmit={() => setOpenPopUp(true)}
+      />
+    );
+  }
+
+  if (showBackStep) {
+    return <Buy />;
+  }
+
+  const handleBackStep = () => {
+    setShowBackStep(true);
+  };
+
+  const handleNextStep = () => {
+    // colocar if aqui para verificar se a carga preterida é maior que a carga atual
+    setShowSelectPlug(true);
+  };
 
   const handleChange = (newValue: number) => {
     setValue(newValue);
@@ -107,14 +135,16 @@ export const BuyEnergy = ({ averagePrice }: BuyEnergyProps) => {
           <p className="  text-lg  mt-2 px-2 font-medium ">
             Total to be paid: V${(value * averagePrice).toFixed(2)}
           </p>
-          
         </div>
         <div className="absolute bottom-0 left-0 right-0">
           <div className="flex justify-between m-4">
-            <button>
+            <button onClick={handleBackStep}>
               <Image src={arrowReverse} alt="" />
             </button>
-            <button className="bg-[#3AFF4E] h-10 w-32 flex items-center justify-center rounded-md">
+            <button
+              onClick={handleNextStep}
+              className="bg-[#3AFF4E] h-10 w-32 flex items-center justify-center rounded-md"
+            >
               <h1 className="text-black mr-2">Next Step</h1>
               <Image src={arrow} alt="" />
             </button>
