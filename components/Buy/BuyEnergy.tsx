@@ -18,6 +18,7 @@ interface BuyEnergyProps {
   setValue: Dispatch<SetStateAction<number>>;
   onSubmit: () => void;
 }
+const currentBattery = 23;
 
 export const BuyEnergy = ({
   averagePrice,
@@ -27,7 +28,9 @@ export const BuyEnergy = ({
   setValue: setInitialValue,
   onSubmit,
 }: BuyEnergyProps) => {
-  const [selectedValue, setSelectedValue] = useState(initialValue);
+  const [selectedValue, setSelectedValue] = useState(
+    Math.max(initialValue, currentBattery)
+  );
   const [showSelectPlug, setShowSelectPlug] = useState(false);
   const [showBackStep, setShowBackStep] = useState(false);
 
@@ -43,8 +46,6 @@ export const BuyEnergy = ({
     setShowSelectPlug(true);
   };
 
-  const currentBattery = 78;
-
   const handleChange = (newValue: any) => {
     setSelectedValue(newValue);
   };
@@ -58,7 +59,6 @@ export const BuyEnergy = ({
   const futureBatteryInWidth = (totalWidth * selectedValue) / 100; // Width of the green rectangle
   const currentBatteryInWidth = (totalWidth * currentBattery) / 100; // Width of the grey rectangle (current battery level)
 
-  
   if (showSelectPlug) {
     return (
       <SelectPlug
@@ -69,7 +69,6 @@ export const BuyEnergy = ({
       />
     );
   }
-  
 
   return (
     <div className="flex justify-center items-center h-full">
@@ -82,65 +81,69 @@ export const BuyEnergy = ({
           Adjust the selector to fill the green part, representing your target
           charge level.
         </h2>
-        <div className="relative flex justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="392"
-            height="126"
-            fill="none"
-            viewBox="0 0 196 63"
-            className="z-0"
-          >
-            <rect
-              fill="#25CB55"
-              x="6"
-              y="6"
-              width={futureBatteryInWidth}
-              height="51"
-            ></rect>
-            <rect
-              fill="#D9D9D9"
-              x="6"
-              y="6"
-              width={currentBatteryInWidth}
-              height="51"
-            ></rect>
-          </svg>
-          <div className="absolute inset-0 flex justify-center items-center">
-            <Image
-              src={battery}
-              alt="Battery icon"
-              className="z-10"
+        <div className=" mt-16">
+          <div className="relative flex justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               width="392"
               height="126"
-            />
+              fill="none"
+              viewBox="0 0 196 63"
+              className="z-0"
+            >
+              <rect
+                fill="#25CB55"
+                x="6"
+                y="6"
+                width={futureBatteryInWidth}
+                height="51"
+              ></rect>
+              <rect
+                fill="#D9D9D9"
+                x="6"
+                y="6"
+                width={currentBatteryInWidth}
+                height="51"
+              ></rect>
+            </svg>
+            <div className="absolute inset-0 flex justify-center items-center">
+              <Image
+                src={battery}
+                alt="Battery icon"
+                className="z-10"
+                width="392"
+                height="126"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-col justify-center items-center mt-8">
-          <Slider
-            min={currentBattery}
-            max={100}
-            value={selectedValue}
-            onChange={handleChange}
-            step={1}
-            railStyle={{ height: 10 }}
-            handleStyle={{
-              borderColor: "green",
-              height: 28,
-              width: 28,
-              marginLeft: -14,
-              marginTop: -9,
-              backgroundColor: "green",
-            }}
-            trackStyle={{ backgroundColor: "green", height: 10 }}
-          />
-          <h1 className="mt-12 font-bold text-3xl">Target Charge Level</h1>
-          <p className="font-extralight text-5xl px-2 mt-4">{selectedValue}%</p>
-          <p className="text-lg mt-2 px-2 font-medium">
-            {/* Total to be paid: V${(selectedValue * averagePrice).toFixed(2)} */}
-            Total to be paid: V${chargeCost}
-          </p>
+          <div className="flex flex-col justify-center items-center mt-8">
+            <Slider
+              min={currentBattery}
+              max={100}
+              value={selectedValue}
+              onChange={handleChange}
+              step={1}
+              railStyle={{ height: 10 }}
+              handleStyle={{
+                borderColor: "green",
+                height: 28,
+                width: 28,
+                marginLeft: -14,
+                marginTop: -9,
+                backgroundColor: "green",
+              }}
+              trackStyle={{ backgroundColor: "green", height: 10 }}
+            />
+            <h1 className="mt-12 font-bold text-3xl">Target Charge Level</h1>
+            <p className="font-extralight text-5xl px-2 mt-4">
+              {selectedValue}%
+            </p>
+            <p className="text-lg mt-2 px-2 font-medium">
+              {/* Total to be paid: V${(selectedValue * averagePrice).toFixed(2)} */}
+              Total to be paid: V${chargeCost}
+            </p>
+          </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
           <div className="flex justify-between m-4">

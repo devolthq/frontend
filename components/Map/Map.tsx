@@ -4,7 +4,15 @@ import L from "leaflet";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, MapContainerProps, Marker, Popup, TileLayer, Tooltip, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  MapContainerProps,
+  Marker,
+  Popup,
+  TileLayer,
+  Tooltip,
+  useMap,
+} from "react-leaflet";
 import { Progress } from "@/components/ui/progress";
 import Station from "@/types/station";
 import makePercentage from "@/utils/makePercentage";
@@ -65,7 +73,9 @@ const Map = ({
   setSelectedStation,
   hidden,
 }: mapProps) => {
-  const [containerStyle, setContainerStyle] = useState<MapContainerProps["style"]>({
+  const [containerStyle, setContainerStyle] = useState<
+    MapContainerProps["style"]
+  >({
     width: width || "100%",
     height: height || "550px",
     borderTopLeftRadius: roundedTopCorners ? "12px" : "0",
@@ -95,18 +105,23 @@ const Map = ({
           background-color: #222;
           border-radius: 10px;
           text-color: white;
+          width: 500px;
+          height:400px
         }
         `}
       </style>
-      <MapContainer center={center} zoom={1} scrollWheelZoom={true} style={containerStyle}>
+      <MapContainer
+        center={center}
+        zoom={1}
+        scrollWheelZoom={true}
+        style={containerStyle}
+      >
         <MapUpdater mapCenter={center} />
 
         <TileLayer
           // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           accessToken="3649afdf-ff6e-40b4-8d98-ef0deb099145"
-          
-
         />
         <Marker icon={iAmHereIcon} position={userLocation}>
           <Popup>Você está aqui!</Popup>
@@ -117,22 +132,22 @@ const Map = ({
         {stations.map((station: Station, index: number) => {
           console.log(station.longitude);
           return (
-            <Marker key={station.id} position={[station.latitude, station.longitude]} icon={stationIcon}>
+            <Marker
+              key={station.id}
+              position={[station.latitude, station.longitude]}
+              icon={stationIcon}
+            >
               <Popup>
+                <h1 className=" text-3xl text-white  font-bold">
+                  Volt Botafogo
+                </h1>
                 <div className="leading-[1px] text-white">
-                  <p className="pb-4">{station.address || "Unnamed station"} </p>
-                  <p>{station.address}</p>
-                  <a href={`https://www.google.com/maps/search/${station.latitude},+${station.longitude}?entry=tts`}>
+                  <p className="">{station.address || "Unnamed station"} </p>
+                  <a
+                    href={`https://www.google.com/maps/search/${station.latitude},+${station.longitude}?entry=tts`}
+                  >
                     Ver no Google Maps
                   </a>
-                  <p className="font-bold ">Carga disponível:</p>
-                  <Progress
-                    className="bg-slate-300"
-                    value={parseInt(makePercentage(station.batteryLevel, station.maxCapacity).toFixed(0)) || 50}
-                  ></Progress>
-                  <p className="">
-                    {makePercentage(station.batteryLevel, station.maxCapacity).toFixed(0) || 50}% (12 A/h)
-                  </p>
 
                   <p className="font-bold pt-4">Compatibility:</p>
                   <p className=""> BYD, EC20 and Volvo Plugs</p>
@@ -140,6 +155,25 @@ const Map = ({
                   <p className="font-bold pt-4">Price per Kw:</p>
                   <p className="">{station.meanPrice} Voltz</p>
 
+                  <p className="font-bold ">Velocidade de carregamento:</p>
+                  <Progress
+                    className="bg-slate-300 w-full"
+                    value={
+                      parseInt(
+                        makePercentage(
+                          station.batteryLevel,
+                          station.maxCapacity
+                        ).toFixed(0)
+                      ) || 50
+                    }
+                  ></Progress>
+                  <p className="">
+                    {makePercentage(
+                      station.batteryLevel,
+                      station.maxCapacity
+                    ).toFixed(0) || 50}
+                    % (12 KW/h)
+                  </p>
                   {buttonText && (
                     <button
                       onClick={() => {

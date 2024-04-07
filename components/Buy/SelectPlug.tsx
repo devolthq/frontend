@@ -9,6 +9,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "../ui/dialog";
+import StationUnlocked from "./StationUnlocked";
 
 interface SelectPlugProps {
   averagePrice: number;
@@ -57,6 +58,28 @@ const SelectPlug = ({
     // Logic for what happens on the next step
     setOpenPopUp(true); // Assume this opens the dialog for review
   };
+
+  const [showStationUnlocked, setShowStationUnlocked] = useState(false);
+
+  const handleStationUnlocked = () => {
+    setShowStationUnlocked(true);
+  };
+
+  if (showStationUnlocked) {
+    return (
+      <StationUnlocked
+        selectedStation={selectedStation}
+        selectedSpot={{
+          id: 1,
+          name: "Spot 1",
+          compatibility: "Compatible with your car!",
+          status: "Available",
+        }}
+        toBeCharged={toBeCharged}
+        chargeCost={chargeCost}
+      />
+    );
+  }
 
   return (
     <div className="flex justify-center items-center h-full">
@@ -130,7 +153,7 @@ const SelectPlug = ({
             </p>
           </DialogDescription>
           <button
-            onClick={() => setOpenPopUp(false)}
+            onClick={handleStationUnlocked}
             className="bg-primary text-black font-semibold px-4 py-2 rounded-lg"
           >
             Place Bid and Unlock Charger

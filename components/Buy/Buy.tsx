@@ -116,13 +116,13 @@ const Buy = () => {
             width={"100%"}
             setSelectedStation={setSelectedStation}
           />
-          <div className=" bg-zinc-800 w-full -mt-12 z-0 rounded-lg">
+          {/* <div className=" bg-zinc-800 w-full -mt-12 z-0 rounded-lg">
             <div className="flex gap-x-5 w-full my-4 mx-8 divide-x">
               <div className="">
                 <StationData selectedStation={selectedStation} />
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="absolute bottom-0 left-0 right-0">
             <div className="flex justify-between m-4">

@@ -49,7 +49,7 @@ export const MapSectionBuypage = ({
       center={location}
       width={width}
       setSelectedStation={setSelectedStation}
-      height="300px"
+      height="550px"
     />
   );
 };
