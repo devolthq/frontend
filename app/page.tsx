@@ -6,12 +6,9 @@ import { LocationProvider } from "@/contexts/LocationContext";
 import Topbar from "@/components/Topbar/Topbar";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import CardsSection from "@/components/CardsSection/CardsSection";
-import { Car } from "lucide-react";
 import Footer from "@/components/Footer/Footer";
 import { motion } from "framer-motion";
 import BrandsSection from "@/components/BrandsSection/BrandsSection";
-import MapSectionHomepage from "@/components/Map/MapSectionHomepage";
-import Map from "@/components/Map/Map";
 import MapSectionHome from "@/components/MapSectionHome/MapSectionHome";
 import SupportSection from "@/components/SupportSection/SupportSection"; 
 
@@ -29,9 +26,9 @@ const Home: NextPage = () => {
       >
       <BrandsSection/>
       <CardsSection/>
+      </motion.div>
       <MapSectionHome/>    
       <SupportSection />
-      </motion.div>
       <Footer/>
     </LocationProvider>
 

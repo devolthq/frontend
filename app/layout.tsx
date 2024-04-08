@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-
 import { Poppins } from "next/font/google"
-import { Wallet } from "@/contexts/WalletContext";
 
 export const metadata: Metadata = {
   title: "DeVolt | The distributed charging network",
@@ -24,11 +22,9 @@ const poppins = Poppins({
 const App = ({ children }: { children: React.ReactNode }) => {
   return (
     <html  lang="en" className={poppins.className}>
-      <Wallet>
         <body>
             {children}
         </body>
-      </Wallet>
     </html>
   );
 };

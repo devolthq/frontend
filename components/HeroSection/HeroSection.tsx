@@ -19,6 +19,11 @@ export default function HeroSection() {
     setIsModalOpen(false);
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth", block: "center"});
+  }
+
   return (
     <div className="h-fit md:mb-12 mb-8 pt-20 relative mx-auto max-w-screen-2xl">
       <motion.div
@@ -75,7 +80,7 @@ export default function HeroSection() {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 3 }}
           className="flex flex-wrap justify-center mb-20 md:mb-0 mx-4 gap-10">
-            <Button className="hover:scale-105  transition shadow-lg shadow-[#3a583a]">
+            <Button className="hover:scale-105  transition shadow-lg shadow-[#3a583a]" onClick={() => scrollToSection("map")}>
               Find charging stations near you
               <ChevronRight className="ml-2 h-4 w-4"/>
             </Button>

@@ -2,6 +2,7 @@ import React from 'react'
 import logo from "@/public/logo_horizontal.svg";
 import Image from 'next/image';
 import { GithubIcon, TwitterIcon } from 'lucide-react';
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,8 +15,12 @@ export default function Footer() {
           <p>Made in 🇧🇷</p>
         </div>
         <div className='flex justify-center py-4 gap-4'>
-        <GithubIcon strokeWidth={1.5} fill="#777" color='#777' size={50} className='bg-neutral-900 rounded-full p-3' />
-        <TwitterIcon strokeWidth={1.5} fill="#6ca6ec" color='#6ca6ec' size={50} className='bg-neutral-900 rounded-full p-3' />
+        <Link href='https://github.com/devolthq'>
+          <GithubIcon strokeWidth={1.5} fill="#777" color='#777' size={50} className='bg-neutral-900 rounded-full p-3' />
+        </Link>
+        <Link href='https://x.com/ddevolt'>
+          <TwitterIcon strokeWidth={1.5} fill="#6ca6ec" color='#6ca6ec' size={50} className='bg-neutral-900 rounded-full p-3' />
+        </Link>
         </div>
         <div className='w-full flex justify-center'>
         <p className='mx-auto text-xs md:text-base text-neutral-500 p-2'>Copyright @ 2024 DevoltHQ Limited </p>

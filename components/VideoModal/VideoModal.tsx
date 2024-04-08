@@ -25,7 +25,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ onClose }) => {
       }, [onClose]);
 
     return (
-        <div className="fixed overflow-hidden top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center">
+        <div className="fixed z-[1000] overflow-hidden top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center">
             <div className="bg-[#131413] border-[2px] border-[#161d15] p-4 rounded-lg md:w-[60%] sm:w-[90%] md:h-[65%] sm:h-[40%]" id="video-modal">
                 <div className='flex justify-end mb-2'>
                     <button onClick={onClose} className="top-2 right-2 text-gray-500 hover:text-gray-700">
