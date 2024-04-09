@@ -70,9 +70,9 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 3 }}
           >
-            DeVolt is a decentralized platform and protocol designed to facilitate the entry of new players into the electric fueling market. <span className="font-semibold">
+            DeVolt is a descentralized solution focused on providing the eletricity needed for eletric cars. <span className="font-semibold">
               
-              With monetary incentives, logistical facilitations, more accessible stations, and an open, fully transparent market.
+            With monetary incentives, logistical facilitations, more accessible stations, and an open, fully transparent market.
               </span>
           </motion.p>
           <motion.div
@@ -80,11 +80,11 @@ export default function HeroSection() {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 3 }}
           className="flex flex-wrap justify-center mb-20 md:mb-0 mx-4 gap-10">
-            <Button className="hover:scale-105  transition shadow-lg shadow-[#3a583a]" onClick={() => scrollToSection("map")}>
+            <Button onClick={() => scrollToSection("map")}>
               Find charging stations near you
               <ChevronRight className="ml-2 h-4 w-4"/>
             </Button>
-            <Button variant={"secondary"} onClick={openModal}>
+            <Button variant={"secondary"} onClick={openModal} className="animate-bounce  hover:scale-105  transition shadow-lg shadow-[#3a583a]" >
               Watch the video
               <PlayIcon fill="#fff" className="ml-2 h-4 w-4" />
             </Button>
