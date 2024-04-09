@@ -34,7 +34,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ onClose }) => {
                 </div>
                 <iframe
                     className='w-full h-[93%]'
-                    src="https://www.youtube.com/embed/gBJNJCYcQUI?si=emHue3mLS0_powpk"
+                    src="https://www.youtube.com/embed/o4ooB7YaL2E?si=33vFjulGg9j-26dP"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
