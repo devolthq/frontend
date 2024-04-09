@@ -7,7 +7,7 @@ export default function AboutHero() {
     return (
         <div className="flex justify-center">
             <div className="px-12 md:px-12 mt-4 md:mt-12 max-w-screen-2xl w-[100%]">
-                <p className="text-5xl font-semibold md:px-10 mb-2">What is Devolt? Can I trust it?</p>
+                <p className="text-5xl font-semibold md:px-10 mb-2">What is Devolt? </p>
                 <div className="flex items-center jusxatify-center">
                     <div className="md:w-[70%] md:h-[80%] md:flex p-4 gap-8">
                         <div className="md:w-[50%] ">

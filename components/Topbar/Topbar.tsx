@@ -41,7 +41,7 @@ export default function Topbar() {
           About
         </Link>
         <Link href="/" onClick={() => scrollToSection("support")} className={`transition hover:text-white hover:cursor-pointer text-zinc-600`}>
-          Support
+          Contact
         </Link>
       </div>
       <div className="my-auto">

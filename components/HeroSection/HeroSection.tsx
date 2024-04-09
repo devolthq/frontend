@@ -86,8 +86,15 @@ export default function HeroSection() {
             </Button>
             <motion.div
               initial={{ y: 0 }}
-              animate={{ y: -15 }}
-              transition={{ duration: 0.5, delay: 3.2, repeat: 9, repeatType: "reverse", bounce: 0.5}}
+              animate={{ y: -5 }}
+              transition={{
+                duration: 0.4, // Torna a duração um pouco mais rápida
+                delay: 3.2,
+                repeat: 7, // Para repetir indefinidamente, use Infinity
+                repeatType: "reverse",
+                ease: "easeInOut", 
+                bounce: true  
+              }}
             >
               <Button variant={"secondary"} onClick={openModal} className="hover:scale-105  transition shadow-lg shadow-[#3a583a]" >
                 Watch the video
