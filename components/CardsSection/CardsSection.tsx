@@ -25,9 +25,7 @@ export default function CardsSection() {
             </p>
 
             <p className="text-start text-neutral-400 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor, Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor{" "}
+            DeVolt stations emerge naturally where energy supply meets demand, ensuring you always have power where and when you need it, directly influenced by market dynamics.{" "}
             </p>
           </div>
         </div>
@@ -46,9 +44,7 @@ export default function CardsSection() {
             </p>
 
             <p className="text-start text-neutral-400 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor, Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor
+            DeVolt offers secure transactions with direct, transparent operations. Our robust encryption protects every charge, ensuring your data and power are safe.
             </p>
           </div>
         </div>
@@ -67,9 +63,7 @@ export default function CardsSection() {
             </p>
 
             <p className="text-start text-neutral-400 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor, Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor{" "}
+            Experience the convenience of charging with DeVolt. Our responsive platform meets your needs with efficiency, adapting seamlessly to supply and demand.{" "}
             </p>
           </div>
         </div>

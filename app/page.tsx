@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import BrandsSection from "@/components/BrandsSection/BrandsSection";
 import MapSectionHome from "@/components/MapSectionHome/MapSectionHome";
 import SupportSection from "@/components/SupportSection/SupportSection"; 
+import HowItWorks from "@/components/HowItWorks/HowItWorks";
 
 const Home: NextPage = () => {
 
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
       >
       <BrandsSection/>
       <CardsSection/>
+      <HowItWorks/>
       </motion.div>
       <MapSectionHome/>    
       <SupportSection />
