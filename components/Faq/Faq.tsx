@@ -3,9 +3,9 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-  } from "../../components/ui/accordion"
-  
-  export function AccordionDemo() {
+} from "../../components/ui/accordion"
+
+export function AccordionDemo() {
     return (
         <div className="flex justify-center flex-col items-center my-24">
             <p className="text-5xl font-semibold md:px-10 mb-2">FAQ</p>
@@ -38,7 +38,7 @@ import {
                     <AccordionItem value="item-5">
                         <AccordionTrigger className="text-2xl">Can anyone install a DeVolt charging station?</AccordionTrigger>
                         <AccordionContent className="text-neutral-400">
-                            Yes, anyone who meets DeVolt's technical and safety standards can install a charging station. Our platform facilitates the process, making it straightforward to join as a provider.
+                            Yes, anyone who meets DeVolt&apos;s technical and safety standards can install a charging station. Our platform facilitates the process, making it straightforward to join as a provider.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-6">
