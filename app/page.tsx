@@ -10,30 +10,35 @@ import Footer from "@/components/Footer/Footer";
 import { motion } from "framer-motion";
 import BrandsSection from "@/components/BrandsSection/BrandsSection";
 import MapSectionHome from "@/components/MapSectionHome/MapSectionHome";
-import SupportSection from "@/components/SupportSection/SupportSection"; 
+import SupportSection from "@/components/SupportSection/SupportSection";
 import HowItWorks from "@/components/HowItWorks/HowItWorks";
+import AboutHero from "@/components/AboutHero/AboutHero";
+import { AccordionDemo } from "@/components/Faq/Faq";
+import StepsToBuyAndSell from "@/components/StepsToBuy/StepsToBuy";
 
 const Home: NextPage = () => {
-
   return (
     <LocationProvider>
-      <Topbar/>
-      <HeroSection/>
+      <Topbar />
+      <HeroSection />
 
       <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 4, duration: 1}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4, duration: 1 }}
       >
-      <BrandsSection/>
-      <CardsSection/>
-      <HowItWorks/>
+        <BrandsSection />
+        <CardsSection />
+        {/* <HowItWorks/> */}
+        <MapSectionHome />
+        <AboutHero />
+        <StepsToBuyAndSell />
+        <AccordionDemo />
       </motion.div>
-      <MapSectionHome/>    
-      <SupportSection />
-      <Footer/>
-    </LocationProvider>
 
+      <SupportSection />
+      <Footer />
+    </LocationProvider>
   );
 };
 
