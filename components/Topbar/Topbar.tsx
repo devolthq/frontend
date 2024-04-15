@@ -13,7 +13,6 @@ export default function Topbar() {
   const pathname = usePathname();
 
   const scrollToSection = (id: string) => {
-    router.push("/");
     setTimeout(() => {
       const element = document.getElementById(id);
       element?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -59,7 +58,7 @@ export default function Topbar() {
           className="hover:scale-105 transition"
           onClick={() => router.push("https://simulation.devolt.xyz/")}
         >
-          Get started
+          Try it out
         </Button>
       </div>
     </motion.div>

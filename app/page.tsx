@@ -15,8 +15,15 @@ import HowItWorks from "@/components/HowItWorks/HowItWorks";
 import AboutHero from "@/components/AboutHero/AboutHero";
 import { AccordionDemo } from "@/components/Faq/Faq";
 import StepsToBuyAndSell from "@/components/StepsToBuy/StepsToBuy";
+import printConsoleASCIIArt from "@/utils/ASCIIart";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+
+  let printedASCII = false
+  useEffect(()=>{!printedASCII&&printConsoleASCIIArt();printedASCII = true},[])
+
+
   return (
     <LocationProvider>
       <Topbar />

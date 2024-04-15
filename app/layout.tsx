@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { Poppins } from "next/font/google"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: "DeVolt | The distributed charging network",
@@ -24,6 +26,7 @@ const App = ({ children }: { children: React.ReactNode }) => {
     <html  lang="en" className={poppins.className}>
         <body>
             {children}
+            <ToastContainer theme="colored" bodyClassName={"font-medium"}/>
         </body>
     </html>
   );

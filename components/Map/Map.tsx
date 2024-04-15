@@ -130,7 +130,6 @@ const Map = ({
         {/* map the stations prop */}
 
         {stations.map((station: Station, index: number) => {
-          console.log(station.longitude);
           return (
             <Marker
               key={station.id}
