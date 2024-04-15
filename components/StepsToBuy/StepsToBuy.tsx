@@ -31,10 +31,10 @@ export default function StepsToBuyAndSell() {
             </div>
             <div className="flex justify-center mt-20">
                 <div className="px-12 md:px-12 mt-4 md:mt-12 max-w-screen-2xl w-full md:flex">
-                    <p className="text-4xl font-semibold md:px-10 mb-2 md:w-[40%]">
+                    <p className="text-3xl md:text-4xl font-semibold md:px-10 mb-2 md:w-[40%]">
                         Become an Energy Seller with DeVolt
                     </p>
-                    <p className="md:w-[60%] text-neutral-400">
+                    <p className="md:w-[60%] text-neutral-400 mb-4 text-base md:text-lg">
                         Join DeVolt&apos;s network and start selling energy with minimal
                         bureaucracy. Our straightforward process ensures you can quickly and
                         efficiently begin contributing to the energy marketplace. By
@@ -47,9 +47,6 @@ export default function StepsToBuyAndSell() {
                     </Button>
                 </div>
             </div>
-            {/* <div className="md:flex justify-center w-full hidden mt-6">
-                <Image src={stepsToSell} alt="buySteps" width={1300} />
-            </div> */}
         </div>
     );
 }
