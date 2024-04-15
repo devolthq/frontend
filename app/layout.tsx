@@ -26,7 +26,7 @@ const App = ({ children }: { children: React.ReactNode }) => {
     <html  lang="en" className={poppins.className}>
         <body>
             {children}
-            <ToastContainer />
+            <ToastContainer theme="colored" bodyClassName={"font-medium"}/>
         </body>
     </html>
   );

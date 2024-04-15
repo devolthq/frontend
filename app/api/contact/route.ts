@@ -1,40 +1,109 @@
 "use server";
-import { google } from 'googleapis';
+
+import nodemailer from "nodemailer";
+import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
+import string from "string-sanitizer";
+const OAuth2 = google.auth.OAuth2;
 
-const gmail = google.gmail({
-    version: 'v1',
-    auth: process.env.GMAIL_API_KEY
-});
+const createTransporter = async () => {
+  const oauth2Client = new OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.GOOGLE_REDIRECT_URI
+  );
 
-interface Data {
-    name: string;
-    email: string;
-    message: string;
-};
-
-export async function POST(
-  req: NextRequest,
-  res: NextResponse
-) {
-  const data: Data = await req.json();
-  console.log(data);
-
-  const raw = Buffer.from(
-    `Subject: ${data.name} - ${data.email}\r\n` +
-    `To: marceloow147@gmail.com\r\n` +
-    `From: devolt-email-service@driven-heading-420120.iam.gserviceaccount.com\r\n\r\n` + // ${data.email}
-    `${data.message}`
-  ).toString("base64").replace(/\+/g, '-').replace(/\//g, '_');
-
-  const response = await gmail.users.messages.send({
-    userId: 'me',
-    requestBody: {
-      raw: raw
-    }
+  oauth2Client.setCredentials({
+    refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
   });
 
-  console.log('Message Id: ', response.data.id);
+  const accessToken = await new Promise((resolve, reject) => {
+    oauth2Client.getAccessToken((err, token) => {
+      if (err) {
+        reject("Failed to create access token :(");
+      }
+      resolve(token);
+    });
+  });
 
-  return Response.json({ message: "Message sent successfully!", data: data });
+  const transporter = nodemailer.createTransport({
+    // @ts-ignore
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.SENDER_EMAIL,
+      accessToken,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+    },
+  });
+
+  return transporter;
+};
+
+const sendEmail = async (
+  senderName: string,
+  senderEmail: string,
+  message: string
+) => {
+  let emailTransporter = await createTransporter();
+  return await emailTransporter.sendMail({
+    from: process.env.SENDER_EMAIL,
+    to: [
+      "paulo.evangelista@sou.inteli.edu.br",
+      // "henrique.santos@sou.inteli.edu.br",
+      // "marcelo.feitoza@sou.inteli.edu.br",
+      // "emanuele.martins@sou.inteli.edu.br",
+    ],
+    text: `RECEBEMOS UMA NOVA MENSAGEM PELO FORMULARIO DE CONTATO NO SITE! \n Nome: ${senderName} \n Email: ${senderEmail} \n Mensagem:\n${message}`,
+    subject: "Nova mensagem recebida pelo formulário de contato do DEVOLT!!!",
+  });
+};
+
+interface Data {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export async function POST(req: NextRequest, res: NextResponse) {
+  console.log("started handlign request")
+  const data: Data = await req.json();
+
+  if (!data.name || !data.email || !data.message) {
+    return new Response(
+      "Uhmm... It looks like you forgot to fill something? Check your data and try again...",
+      {
+        status: 400,
+      }
+    );
+  }
+
+  // @ts-ignore
+  if (!string.validate.isEmail(data.email)) {
+    return new Response(
+      "Oops! It looks like you've entered an invalid email address 😔",
+      {
+        status: 400,
+      }
+    );
+  }
+
+  const response = await sendEmail(string.addDash(data.name), data.email, string.addDash(data.message))
+    .then(() => {
+      console.log("returning api success")
+      return new Response("success", {
+        status: 200,
+      });
+    })
+    .catch((err) => {
+      console.log("returning api error")
+      return new Response(`error`, {
+        status: 500,
+      });
+    });
+    console.log("reached end of function. this shouldnt happen...")
+
+  return response;
 }
