@@ -52,9 +52,10 @@ const sendEmail = async (
     from: process.env.SENDER_EMAIL,
     to: [
       "paulo.evangelista@sou.inteli.edu.br",
-      // "henrique.santos@sou.inteli.edu.br",
-      // "marcelo.feitoza@sou.inteli.edu.br",
-      // "emanuele.martins@sou.inteli.edu.br",
+      "henrique.santos@sou.inteli.edu.br",
+      "matheus.santos@sou.inteli.edu.br",
+      "marcelo.feitoza@sou.inteli.edu.br",
+      "emanuele.martins@sou.inteli.edu.br",
     ],
     text: `RECEBEMOS UMA NOVA MENSAGEM PELO FORMULARIO DE CONTATO NO SITE! \n Nome: ${senderName} \n Email: ${senderEmail} \n Mensagem:\n${message}`,
     subject: "Nova mensagem recebida pelo formulário de contato do DEVOLT!!!",
@@ -103,7 +104,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
         status: 500,
       });
     });
-    console.log("reached end of function. this shouldnt happen...")
 
   return response;
 }
