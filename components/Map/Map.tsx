@@ -5,6 +5,7 @@ import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet/dist/leaflet.css";
 import {
+  AttributionControl,
   MapContainer,
   MapContainerProps,
   Marker,
@@ -16,6 +17,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import Station from "@/types/station";
 import makePercentage from "@/utils/makePercentage";
+import { CheckCircle } from "lucide-react";
 
 const iAmHereIcon = L.icon({
   iconUrl: "/mapIcon.svg",
@@ -39,7 +41,7 @@ const MapUpdater = ({ mapCenter }: any) => {
   const map = useMap();
 
   useEffect(() => {
-    map.flyTo(mapCenter, 16, {
+    map.flyTo(mapCenter, 14, {
       animate: true,
       duration: 5.0, // Duração da animação em segundos
     });
@@ -105,17 +107,23 @@ const Map = ({
           background-color: #222;
           border-radius: 10px;
           text-color: white;
-          width: 500px;
-          height:400px
+          margin: 0;
         }
+        .leaflet-popup-content p {
+          margin: 10px 0;
+          font-family: __Poppins_35a7f6, sans-serif;
+      }
         `}
       </style>
       <MapContainer
         center={center}
         zoom={1}
+        attributionControl={false}
         scrollWheelZoom={true}
         style={containerStyle}
       >
+                <AttributionControl prefix={false} position="bottomright" />
+
         <MapUpdater mapCenter={center} />
 
         <TileLayer
@@ -137,42 +145,22 @@ const Map = ({
               icon={stationIcon}
             >
               <Popup>
-                <h1 className=" text-3xl text-white  font-bold">
-                  Volt Botafogo
-                </h1>
                 <div className="leading-[1px] text-white">
-                  <p className="">{station.address || "Unnamed station"} </p>
-                  <a
-                    href={`https://www.google.com/maps/search/${station.latitude},+${station.longitude}?entry=tts`}
-                  >
-                    Ver no Google Maps
-                  </a>
-
-                  <p className="font-bold pt-4">Compatibility:</p>
-                  <p className=""> BYD, EC20 and Volvo Plugs</p>
-
-                  <p className="font-bold pt-4">Price per Kw:</p>
-                  <p className="">{station.meanPrice} Voltz</p>
-
-                  <p className="font-bold ">Velocidade de carregamento:</p>
-                  <Progress
-                    className="bg-slate-300 w-full"
-                    value={
-                      parseInt(
-                        makePercentage(
-                          station.batteryLevel,
-                          station.maxCapacity
-                        ).toFixed(0)
-                      ) || 50
-                    }
-                  ></Progress>
-                  <p className="">
-                    {makePercentage(
-                      station.batteryLevel,
-                      station.maxCapacity
-                    ).toFixed(0) || 50}
-                    % (12 KW/h)
+                  <p className="text-center my-10 max-w-screen-md text-base">
+                    {station.address || "Unnamed station"}{" "}
                   </p>
+                  <div className="flex my-0 py-0 gap-2 justify-center items-center">
+                    <CheckCircle size={20} color="#86ffb8" className="" />
+                    <p className="font-bold text-base text-green-300">
+                      Compatible
+                    </p>
+                  </div>
+                  <div className="bg-neutral-800 rounded-lg max-w-max mx-auto mb-2 shadow px-4 flex">
+                    <p className="text-lg font-medium text-center w-full">
+                      {station.meanPrice} Volts/Kwh
+                    </p>
+                  </div>
+
                   {buttonText && (
                     <button
                       onClick={() => {
@@ -180,7 +168,7 @@ const Map = ({
                           setSelectedStation(station);
                         }
                       }}
-                      className="bg-primary p-4 px-6 rounded-full text-[#1e1e1e] font-bold hover:bg-green-400 transition"
+                      className="bg-[#3aff4e] text-base w-full mt-4 py-1 rounded-lg text-[#1e1e1e] font-bold hover:bg-green-400 transition"
                     >
                       {buttonText}
                     </button>

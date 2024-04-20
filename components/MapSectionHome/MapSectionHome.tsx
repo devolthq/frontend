@@ -3,6 +3,7 @@ import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+import stationsList from "./stations";
 
 export default function MapSectionHome() {
   const router = useRouter();
@@ -18,39 +19,20 @@ export default function MapSectionHome() {
 
   return (
     <div className="px-10 mb-20" id="map">
-      <Card className="flex-wrap lg:flex-nowrap max-w-screen-2xl md:w-[160vh] px-4 pb-4 flex mx-auto bg-[#080908] border-2 border-[#161d15] gap-6">
+      <Card className="flex-wrap 2xl:flex-nowrap max-w-screen-2xl  px-4 pb-4 flex mx-auto bg-[#080908] border-2 border-[#161d15] gap-6">
         <div className="w-[600px] mx-auto p-4 content-around flex flex-wrap flex-row min-w-16 md:bg-[#0e0f0e] md:border-2 md:border-[#161d15] md:mt-4 md:rounded-md">
           <h2 className="font-bold mx-auto text-center text-3xl md:5xl">
             Find a station near you
           </h2>
           <p className="py-6 hidden text-center md:block">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor, Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor{" "}
+            Find the closest station to you and start charging your car now! All stations are garanteed to be compatible with BYD and GWM/Haval plugs. 
           </p>
-          <Button
-            className="mx-auto mt-4 md:mt-0 px-12"
-            onClick={() => router.push("https://simulation.devolt.xyz/")}
-          >
-            Get started
-          </Button>
+
         </div>
         <div className="w-full rounded-2xl mt-3 m-auto">
           <Map
             center={[-23.572448, -46.706937]}
-            stations={[
-              {
-                address: "Rua dos Pinheiros, 220",
-                batteryLevel: 50,
-                id: 1,
-                latitude: -23.572448,
-                longitude: -46.06937,
-                maxCapacity: 100,
-                meanPrice: 2.5,
-                availablePlugs: "asdgadf",
-                maxVoltage: 220,
-              },
-            ]}
+            stations={stationsList}
             height="350px"
             roundedBottomCorners
             roundedTopCorners

@@ -18,6 +18,8 @@ import StepsToBuyAndSell from "@/components/StepsToBuy/StepsToBuy";
 import printConsoleASCIIArt from "@/utils/ASCIIart";
 import { useEffect } from "react";
 
+
+
 const Home: NextPage = () => {
 
   let printedASCII = false
