@@ -26,44 +26,33 @@ export default function SupportSection() {
         setLoading(true);
 
         toast.loading("Sending your message...", { toastId: "send-contact" });
-        // await axios
-        //     .post("/api/contact", data)
-        //     .then(() => {
-        //         toast.update("send-contact", {
-        //             render: "Message sent! We'll get back to you ASAP 🤩",
-        //             type: "success",
-        //             isLoading: false,
-        //             autoClose: 6000,
-        //         });
-        //     })
-        //     .catch((error) => {
-        //         if (error.response.status === 400) {
-        //             toast.update("send-contact", {
-        //                 render: error.response.data,
-        //                 type: "error",
-        //                 isLoading: false,
-        //                 autoClose: 6000,
-        //             });
-        //         } else {
-        //             toast.update("send-contact", {
-        //                 render: "Oops! Something went wrong!\nI guess we need a developer that knows how to send emails 😗.\n You can always get in touch with us via Twitter, though.",
-        //                 type: "error",
-        //                 isLoading: false,
-        //                 autoClose: 10000,
-        //             });
-        //         }
-        //     }).finally(() => setLoading(false));
-
-        // wait 5 seconds to simulate the loading spinner
-        setTimeout(() => {
-            toast.update("send-contact", {
-                render: "Message sent! We'll get back to you ASAP 🤩",
-                type: "success",
-                isLoading: false,
-                autoClose: 6000,
-            });
-            setLoading(false);
-        }, 5000);
+        await axios
+            .post("/api/contact", data)
+            .then(() => {
+                toast.update("send-contact", {
+                    render: "Message sent! We'll get back to you ASAP 🤩",
+                    type: "success",
+                    isLoading: false,
+                    autoClose: 6000,
+                });
+            })
+            .catch((error) => {
+                if (error.response.status === 400) {
+                    toast.update("send-contact", {
+                        render: error.response.data,
+                        type: "error",
+                        isLoading: false,
+                        autoClose: 6000,
+                    });
+                } else {
+                    toast.update("send-contact", {
+                        render: "Oops! Something went wrong!\nI guess we need a developer that knows how to send emails 😗.\n You can always get in touch with us via Twitter, though.",
+                        type: "error",
+                        isLoading: false,
+                        autoClose: 10000,
+                    });
+                }
+            }).finally(() => setLoading(false));
     };
 
     return (
