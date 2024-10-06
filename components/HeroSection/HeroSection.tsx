@@ -127,12 +127,12 @@ export default function HeroSection() {
           repeatType: "reverse",
         }}
       >
-        <ChevronDown
+        {/* <ChevronDown
           className="mx-auto hidden md:block p-2 md:p-0 md:mt-10 "
           color="#ccc"
           size={70}
           strokeWidth={1}
-        />
+        /> */}
       </motion.div>
     </div>
   );

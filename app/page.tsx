@@ -18,6 +18,7 @@ import StepsToBuyAndSell from "@/components/StepsToBuy/StepsToBuy";
 import printConsoleASCIIArt from "@/utils/ASCIIart";
 import { useEffect } from "react";
 import NewApp from "@/components/NewApp/NewApp";
+import WhoWeAre from "@/components/WhoWeAre/WhoWeAre";
 
 const Home: NextPage = () => {
   let printedASCII = false;
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
         <AboutHero />
         <NewApp />
         <StepsToBuyAndSell />
+        <WhoWeAre/>
         <AccordionDemo />
       </motion.div>
 
