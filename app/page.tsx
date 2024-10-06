@@ -17,14 +17,14 @@ import { AccordionDemo } from "@/components/Faq/Faq";
 import StepsToBuyAndSell from "@/components/StepsToBuy/StepsToBuy";
 import printConsoleASCIIArt from "@/utils/ASCIIart";
 import { useEffect } from "react";
-
-
+import NewApp from "@/components/NewApp/NewApp";
 
 const Home: NextPage = () => {
-
-  let printedASCII = false
-  useEffect(()=>{!printedASCII&&printConsoleASCIIArt();printedASCII = true},[])
-
+  let printedASCII = false;
+  useEffect(() => {
+    !printedASCII && printConsoleASCIIArt();
+    printedASCII = true;
+  }, []);
 
   return (
     <LocationProvider>
@@ -41,6 +41,7 @@ const Home: NextPage = () => {
         {/* <HowItWorks/> */}
         <MapSectionHome />
         <AboutHero />
+        <NewApp />
         <StepsToBuyAndSell />
         <AccordionDemo />
       </motion.div>
