@@ -21,37 +21,37 @@ import NewApp from "@/components/NewApp/NewApp";
 import WhoWeAre from "@/components/WhoWeAre/WhoWeAre";
 
 const Home: NextPage = () => {
-  let printedASCII = false;
-  useEffect(() => {
-    !printedASCII && printConsoleASCIIArt();
-    printedASCII = true;
-  }, []);
+	let printedASCII = false;
+	useEffect(() => {
+		!printedASCII && printConsoleASCIIArt();
+		printedASCII = true;
+	}, []);
 
-  return (
-    <LocationProvider>
-      <Topbar />
-      <HeroSection />
+	return (
+		<LocationProvider>
+			<Topbar />
+			<HeroSection />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 4, duration: 1 }}
-      >
-        <BrandsSection />
-        <CardsSection />
-        {/* <HowItWorks/> */}
-        <MapSectionHome />
-        <AboutHero />
-        <NewApp />
-        <StepsToBuyAndSell />
-        <WhoWeAre/>
-        <AccordionDemo />
-      </motion.div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 4, duration: 1 }}
+			>
+				<NewApp />
+				<BrandsSection />
+				<CardsSection />
+				{/* <HowItWorks/> */}
+				<MapSectionHome />
+				<AboutHero />
+				<StepsToBuyAndSell />
+				<WhoWeAre />
+				<AccordionDemo />
+			</motion.div>
 
-      <SupportSection />
-      <Footer />
-    </LocationProvider>
-  );
+			<SupportSection />
+			<Footer />
+		</LocationProvider>
+	);
 };
 
 export default Home;
