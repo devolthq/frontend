@@ -31,7 +31,7 @@ const Home: NextPage = () => {
 						boxShadow: "0 0 25px #42ff4f30",
 					}}
 					className="w-full h-full md:rounded-lg shadow-2xl md:shadow-none"
-					src="https://www.youtube.com/embed/GrCtolx6kp4?controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
+					src="https://www.youtube.com/embed/bZmSJBUckqA?controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
 					title="DeVolt Presentation"
 					autoFocus={true}
 					frameBorder="0"
