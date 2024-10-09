@@ -61,14 +61,15 @@ export default function Topbar() {
 					Demo
 				</Link>
 				<Link
-					href="/presentation"
+					target="_blank"
+					href="https://drive.google.com/drive/u/3/folders/1auyDSagGdwYz28UgOmwnuwc0sAO1F9WP"
 					className={`transition hover:text-white hover:cursor-pointer ${
-						pathname == "/presentation"
+						pathname == "/resources"
 							? "text-white"
 							: "text-zinc-600"
 					}`}
 				>
-					Presentation
+					Resources
 				</Link>
 			</div>
 			<div className="my-auto">
