@@ -76,10 +76,10 @@ export default function Topbar() {
 				<Button
 					className="hover:scale-105 transition"
 					onClick={() =>
-						router.push("https://simulation.devolt.xyz/")
+						router.push("/demo")
 					}
 				>
-					Try it out
+					Check it out
 				</Button>
 			</div>
 		</motion.div>
